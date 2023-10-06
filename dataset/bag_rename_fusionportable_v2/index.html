@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Bag rename fusionportable v2 - IADC FusionPortable Research</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin'
+        rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+    <script src="../../js/database.js"></script>
+
+    
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+    
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">IADC FusionPortable Research</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calibration <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../calibration/pbacalib/">PBACalib</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../calibration/lcecalib/">LCECalib</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SLAM <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../slam/fl2sam/">FL2SAM</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Perception <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../perception/tbd/">TBD</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datasets <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../fusionportable/">FusionPortable</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../fusionportable_v2/">FusionPortable_V2</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Challenges <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../challenge/prcv2022_vslam/">PRCV2022</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#8-sequences-for-evaluation">8 Sequences for Evaluation</a></li>
+        <li class="first-level "><a href="#n-sequences-for-release">N Sequences for Release</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h3 id="8-sequences-for-evaluation"><strong>8 Sequences for Evaluation</strong><a class="headerlink" href="#8-sequences-for-evaluation" title="Permanent link">&para;</a></h3>
+<p>handheld</p>
+<pre><code>20230526_1241_starbucks -&gt; starbucks00
+20230520_1515_room_dynamic_pedestrain -&gt; room00
+</code></pre>
+<p>mini_hercules</p>
+<pre><code>20230609_1245_parking_jerkymotion -&gt; parking00
+20230609_1253_campus -&gt; campus00
+</code></pre>
+<p>quadrupedal_robot</p>
+<pre><code>20230802_1854_dynamic_pedestrain -&gt; room02
+20230802_1901_grass -&gt; grass00
+</code></pre>
+<p>vehicle</p>
+<pre><code>20230620_1612_hongkong_campus_road -&gt; campus00
+20230621_1536_hongkong_highway_bridge -&gt; highway00
+</code></pre>
+<h3 id="n-sequences-for-release"><strong>N Sequences for Release</strong><a class="headerlink" href="#n-sequences-for-release" title="Permanent link">&para;</a></h3>
+<p>handheld</p>
+<pre><code>20230520_1515_room_dynamic_pedestrain -&gt; room00
+20230520_1519_room_dynamic_pedestrain -&gt; room01
+20230526_1036_grass -&gt; grass00
+20230526_1241_starbucks -&gt; starbucks00
+20230526_1249_starbucks -&gt; starbucks01
+20230802_2224_tunnel -&gt; tunnel00
+**purple: unpublish**
+20230518_2207_white_corridor -&gt; unpublish_corridor00
+20230520_1231_room_static -&gt; unpublish_room02
+20230526_1040_grass -&gt; unpublish_grass01
+20230526_1119_bridge -&gt; unpublish_bridge00
+20230526_1137_bridge -&gt; unpublish_bridge01
+</code></pre>
+<p>mini_hercules</p>
+<pre><code>20230609_1213_parking -&gt; parking00
+20230609_1216_parking -&gt; parking01
+20230609_1245_parking_jerkymotion -&gt; parking02
+20230609_1247_parking_jerkymotion -&gt; parking03
+20230609_1253_campus -&gt; campus00
+20230610_0809_hybrid -&gt; hybrid00
+20230613_0826_hybrid -&gt; hybrid01
+20230614_1714_building_jerky_motion -&gt; campus01
+**purple: late publish**
+20230608_0756_parking_wo_encoder -&gt; unpublish_parking04
+20230608_0801_parking_wo_encoder -&gt; unpublish_parking05
+20230608_0815_parking_wo_encoder -&gt; unpublish_parking06
+20230608_0830_parking_jerkymotion_wo_encoder -&gt; unpublish_parking07
+20230608_0906_campus_wo_encoder -&gt; unpublish_campus02
+20230609_1242_parking -&gt; unpublish_parking08
+20230614_1739_building_pedestrain_wo_encoder -&gt; unpublish_campus03
+20230614_1745_building_eight_shape -&gt; unpublish_campus04
+</code></pre>
+<p>quadrupedal_robot</p>
+<pre><code>20230731_1742_hybrid -&gt; hybrid00
+20230802_1547_grass -&gt; grass00
+20230802_1854_dynamic_pedestrain -&gt; room00
+20230802_1901_grass -&gt; grass01
+20230802_2150_tunnel -&gt; tunnel00
+**purple: late publish**
+20230802_1646_dynamic_pedestrain -&gt; room01
+20230731_1751_grass -&gt; grass01
+20230731_2224_tunnel -&gt; tunnel01
+20230731_2250_tunnel_poor_event_joint -&gt; tunnel02
+20230802_1633_dynamic_pedestrain -&gt; room02
+20230802_1646_dynamic_pedestrain_notcomplete -&gt; room03
+20230802_1917_grass -&gt; grass02
+</code></pre>
+<p>vehicle</p>
+<pre><code>20230620_1612_hongkong_campus_road -&gt; campus00
+20230620_1622_hongkong_campus_road -&gt; campus00
+20230620_1634_hongkong_downhill_road -&gt; downhill00
+20230620_1738_hongkong_multilayer_parking -&gt; multilayer_parking00
+20230621_1251_hongkong_street -&gt; street00
+20230621_1536_hongkong_highway_bridge -&gt; highway00
+20230621_1819_hongkong_highway_congestion -&gt; highway01
+20230621_1825_hongkong_tunnel -&gt; tunnel00
+purple: late publish
+20230620_1700_hongkong_street -&gt; street01
+20230620_1858_hongkong_street_wrong_gnss -&gt; street02
+20230620_1906_hongkong_street_wrong_gnss -&gt; street03
+20230620_1918_hongkong_street_poor_gnss -&gt; street04
+20230621_1221_hongkong_downhill_road -&gt; downhill01
+20230621_1242_downhill_road_day_wrong_gnss -&gt; downhill01
+20230621_1329_hongkong_street -&gt; street05
+20230621_1621_hongkong_highway_bridge -&gt; highway02
+20230621_1704_hongkong_highway_bridge -&gt; highway03
+20230621_1725_hongkong_highway_bridge_smallpc -&gt; highway04
+20230621_1809_hongkong_street_poor_gnss -&gt; street06
+20230621_1813_hongkong_street_congestion -&gt; street07
+20230621_1839_hongkong_tunnel -&gt; tunnel01
+20230621_1842_hongkong_tunnel -&gt; tunnel02
+20230621_1843_hongkong_street -&gt; street08
+20230621_1933_hanghau_uphill_road_poor_gnss -&gt; uphill00
+</code></pre></div>
+        
+        
+    </div>
+
+    
+    <footer class="col-md-12 text-center">
+        
+        
+        <hr>
+        <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+        
+
+        
+        
+    </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script> -->
+
+    
+    <script
+        src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

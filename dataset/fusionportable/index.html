@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>FusionPortable - IADC FusionPortable Research</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin'
+        rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+    <script src="../../js/database.js"></script>
+
+    
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+    
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">IADC FusionPortable Research</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calibration <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../calibration/pbacalib/">PBACalib</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../calibration/lcecalib/">LCECalib</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SLAM <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../slam/fl2sam/">FL2SAM</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Perception <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../perception/tbd/">TBD</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datasets <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">FusionPortable</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../fusionportable_v2/">FusionPortable_V2</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Challenges <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../challenge/prcv2022_vslam/">PRCV2022</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../perception/tbd/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../fusionportable_v2/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#introduction">Introduction</a></li>
+        <li class="first-level "><a href="#data-collection-platforms">Data Collection Platforms</a></li>
+            <li class="second-level"><a href="#sensors">Sensors</a></li>
+                
+            <li class="second-level"><a href="#robots">Robots</a></li>
+                
+            <li class="second-level"><a href="#data-collection-process">Data Collection Process</a></li>
+                
+        <li class="first-level "><a href="#download">Download</a></li>
+            <li class="second-level"><a href="#data-organization">Data Organization</a></li>
+                
+            <li class="second-level"><a href="#download_1">Download</a></li>
+                
+                <li class="third-level"><a href="#sequences">Sequences</a></li>
+                <li class="third-level"><a href="#some-high-resolution-gt-maps">Some High-Resolution GT Maps</a></li>
+        <li class="first-level "><a href="#tools">Tools</a></li>
+        <li class="first-level "><a href="#issues">Issues</a></li>
+        <li class="first-level "><a href="#publications">Publications</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1>FusionPortable</h1>
+<h4>A Multi-Sensor Campus-Scene Dataset for Evaluation of Localization and Mapping Accuracy on Diverse Platforms</h4>
+
+<p align="center">
+    <img src="../../figure/dataset/fusionportable/cover.png" width="95%" />
+</p>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>We consider that a desirable dataset should fulfill the following <strong>four</strong> requirements:</p>
+<ol>
+<li>Various sensors (LiDARs, cameras, IMU, etc.). <br></li>
+<li>Various robotic platforms with diverse motion patterns. <br></li>
+<li>Sequences cover from room-scale (meter-level) to large-scale (kilometer-level). <br></li>
+<li>Benchmarking for different tasks. </li>
+</ol>
+<p>We are motivated to propose the <strong>FusionPortable dataset</strong>, which is initially intended to support odometry, localization, mapping, and some perception tasks. We advance a self-contained, portable, and versatile multi-sensor suite. We construct a dataset that covers a variety of environments on the campus by exploiting multiple robot platforms for data collection. We also provide ground truth for the decouple localization and mapping performance evaluation. </p>
+<!-- TODO(jjiao): -->
+<!-- add the video link -->
+
+<h2 id="data-collection-platforms">Data Collection Platforms<a class="headerlink" href="#data-collection-platforms" title="Permanent link">&para;</a></h2>
+<h3 id="sensors">Sensors<a class="headerlink" href="#sensors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>128-beam Ouster LiDAR (OS1, 120m range) <code>resolution: (128x2048)</code></li>
+<li>FILR BFS-U3-31S4C stereo cameras <code>resolution: (1024x768)</code></li>
+<li>DAVIS346 stereo cameras <code>resolution: (346×240)</code></li>
+<li>STIM300 IMU</li>
+<li>ZED-F9P RTK-GPS</li>
+</ul>
+<h3 id="robots">Robots<a class="headerlink" href="#robots" title="Permanent link">&para;</a></h3>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable/multivehicle.png" width="90%" />
+</p>
+
+<h3 id="data-collection-process">Data Collection Process<a class="headerlink" href="#data-collection-process" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Environment</th>
+<th style="text-align: center;">Platform</th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Garden</td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/data_collection-garden.gif" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Motion Capture Room</td>
+<td style="text-align: center;">Quadrupled Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/data_collection-MCR_normal_00.gif" width="50%" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<h3 id="data-organization">Data Organization<a class="headerlink" href="#data-organization" title="Permanent link">&para;</a></h3>
+<pre><code class="shell">
+FusionPortable/
+├── calibration_files/                     // intrinsics & extrinsics of sensors
+    └── 20220209_calib/
+        ├── ouster00.yaml
+        ├── frame_cam00.yaml
+        └── ...
+├── groundtruth/
+    └── map/                               // ground-truth maps
+      └── 20220216_canteen/
+        ├── scan/
+            ├── 000000.pcd                 // individual scan files
+            └── ...
+        ├── merged_scan.pcd                // ground-truth map (resolution: 1cm)
+        └── transformation.yaml            // TF of each individual scan
+    └── traj/                              // ground-truth trajectories 
+      └── 20220215_canteen_night.txt  
+└── sensor_data/
+    └── handheld/                          // data collection platforms
+      └── 20220215_canteen_night           // sensor data are stored
+        ├── 20220215_canteen_night.bag
+        ├── 20220215_canteen_night.bag.7z  // compressed ROS bag
+        ├── data/
+        └── data_ref_kitti/
+    ├── quadrupedal_robot/
+    └── apollo/
+</code></pre>
+
+<div class="bs-callout bs-callout-default">
+  <h4>Note:</h4>
+  1. <code>env.bag</code> is the raw rosbag.<br>
+  <!-- 2. <code>env_ref.bag</code> is the refined rosbag where sensor data are post-processed [1].<br> -->
+  2. <code>data/</code> stores sensor data files. Each file has the timestamp from <code>timestamps.txt</code>.<br>
+  3. <code>data_ref_kitti/</code> follows the KITTI format to store sensor data files from <code>data/</code>.<br>
+</div>
+
+<h3 id="download_1">Download<a class="headerlink" href="#download_1" title="Permanent link">&para;</a></h3>
+<div class="bs-callout bs-callout-info">
+  <h4>Please click these below links to download:</h4>
+  1. <a href="http://filebrowser.ram-lab.com/share/qEhtb7Cl">sensor_data</a> -
+  pwd: fusionportable
+  <br>
+  2. <a href="http://filebrowser.ram-lab.com/share/S-2Th4iV">ground-truth trajectories and maps</a> -
+  pwd: fusionportable
+  <br>
+  3. <a href="http://filebrowser.ram-lab.com/share/I67uNo6q">calibration_files</a> -
+  pwd: fusionportable
+  <br>
+  <p>Note: Extract the ROS bag from .7z files in the terminal: <code>7z e data.7z</code></p>
+</div>
+
+<h4 id="sequences">Sequences<a class="headerlink" href="#sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Platform</th>
+<th style="text-align: center;">Picture</th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Calibration</td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/Checkerboard_Small.png" alt="Motion Capture Room" width="60%" /></td>
+<td style="text-align: center;">20220209_StaticTarget_SmallCheckerBoard_9X12_30mm</td>
+<td style="text-align: center;"><a href=""></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Calibration</td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/Checkerboard_Big.png" alt="Motion Capture Room" width="60%" /></td>
+<td style="text-align: center;">20220215_DynamicTarget_BigCheckerBoard_7X10_68mm</td>
+<td style="text-align: center;"><a href=""></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Calibration</td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/allan.png" alt="Motion Capture Room" width="60%" /></td>
+<td style="text-align: center;">20220209_Static_IMUs_3h20mins</td>
+<td style="text-align: center;"><a href=""></a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="60%"/></td>
+<td style="text-align: center;">20220216_canteen_night</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="60%" /></td>
+<td style="text-align: center;">20220216_canteen_day</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220216_canteen_day_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/garden.png" alt="Garden" width="60%" /></td>
+<td style="text-align: center;">20220215_garden_night</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_garden_night_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/garden.png" alt="Canteen" width="60%" /></td>
+<td style="text-align: center;">20220216_garden_day</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220216_garden_day_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/corridor.jpg" alt="Canteen" width="60%" /></td>
+<td style="text-align: center;">20220216_corridor_day</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220216_corridor_day_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/escalator.jpg" alt="Canteen" width="60%" /></td>
+<td style="text-align: center;">20220216_escalator_day</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220216_escalator_day_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/building.png" alt="Buliding" width="60%" /></td>
+<td style="text-align: center;">20220225_building_day</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220225_building_day_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr.png" alt="Motion Capture Room" width="60%" /></td>
+<td style="text-align: center;">20220216_MCR_slow</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220216_MCR_slow_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr.png" alt="Motion Capture Room" width="60%" /></td>
+<td style="text-align: center;">20220216_MCR_normal</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220216_MCR_normal_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr.png" alt="Motion Capture Room" width="60%" /></td>
+<td style="text-align: center;">20220216_MCR_fast</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220216_MCR_fast_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Quadruped Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr_normal_00.png" alt="MCR_slow_00" width="60%" /></td>
+<td style="text-align: center;">20220219_MCR_slow_00</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220219_MCR_slow_00_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Quadruped Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr_normal_00.png" alt="MCR_slow_00" width="60%" /></td>
+<td style="text-align: center;">20220219_MCR_slow_01</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220219_MCR_slow_01_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Quadruped Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr_normal_00.png" alt="MCR_slow_00" width="60%" /></td>
+<td style="text-align: center;">20220219_MCR_normal_00</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220219_MCR_normal_00_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Quadruped Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr_normal_00.png" alt="MCR_slow_00" width="60%" /></td>
+<td style="text-align: center;">20220219_MCR_normal_01</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220219_MCR_normal_01_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Quadruped Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr_normal_00.png" alt="MCR_slow_00" width="60%" /></td>
+<td style="text-align: center;">20220219_MCR_fast_00</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220219_MCR_fast_00_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Quadruped Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/mcr_normal_00.png" alt="MCR_slow_00" width="60%" /></td>
+<td style="text-align: center;">20220219_MCR_fast_01</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220219_MCR_fast_01_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Apollo Vehicle</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/campus_road.png" alt="Campus Road" width="60%" /></td>
+<td style="text-align: center;">20220226_campus_road</td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220226_campus_road_day_preview.gif">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="some-high-resolution-gt-maps">Some High-Resolution GT Maps<a class="headerlink" href="#some-high-resolution-gt-maps" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Environment</th>
+<th style="text-align: center;">Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Garden</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/gt_map/gtmap_garden.gif" alt="GT Map_Garden" width="60%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Escalator</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/gt_map/gtmap_escalator.gif" alt="GT Map_Escalator" width="60%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Building</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/gt_map/gtmap_building.gif" alt="GT Map_Building" width="60%" /></td>
+</tr>
+</tbody>
+</table>
+<!-- ### Download
+Download the dataset by clicking the button below, and log
+
+* Username: fusionportable
+* Password: iadchkust
+
+<a href="https://filebrowser.ram-lab.com"><button type="button" class="btn btn-success"><i class="fas fa-cloud-download-alt fa-2x"></i><span style="font-size:15px;"> Download</span></button></a> -->
+
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
+<p>The dataset tool can be used by clicking the button below</p>
+<p><a href="https://github.com/HKUSTGZ-IADC/iadc_dataset_tools"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Dataset Tool</button></a></p>
+<!-- ## Evaluation
+### Evalaution of Trajectories
+
+### Evaluation of Mapping Results
+
+### Baseline Algorithms
+| Sensor                         | Algorithm   | Link |
+| :----------------------------- | :---------- | :--- |
+| IMU + Stereo Vision            | VINS-Fusion | xxx  |
+| IMU + Stereo Vision            | ORB-SLAM3   | xxx  |
+| Stereo Event Camera            | ESVO        | xxx  |
+| LiDAR                          | A-LOAM      | xxx  |
+| IMU + LiDAR                    | LIO-Mapping | xxx  |
+| IMU + LiDAR                    | FAST-LIO2   | xxx  |
+| IMU + LiDAR                    | LIO-SAM     | xxx  |
+| IMU + LiDAR + Monocular Vision | R3LIVE      | xxx  |
+|                                |             |      | -->
+
+<h2 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
+<p>If you have any issues with the theme, please report them on the repository:</p>
+<p><a href="https://github.com/HKUSTGZ-IADC/iadc_dataset_tools/issues"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Report Issues</button></a></p>
+<h2 id="publications">Publications<a class="headerlink" href="#publications" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>FusionPortable: A Multi-Sensor Campus-Scene Dataset for Evaluation of Localization and Mapping Accuracy on Diverse Platforms</strong><br/>
+<span style="color: gray">Jianhao Jiao*, Hexiang Wei*, Tianshuai Hu*, Xiangcheng Hu*, Yilong Zhu, Zhijian He, Jin Wu, Jingwen Yu, Xupeng Xie, Huaiyang Huang, Ruoyu Geng, Lujia Wang, Ming Liu</span><br/>
+<em>Presented at IROS 2022</em><br/>
+<a href="../../files/jiao2022fusionportable.pdf">[paper]</a>
+<a href="bib/jiao2022fusionportable.bib">[bibtex]</a></li>
+</ol>
+<!-- [[video]]() -->
+<!-- [[page]](https://ram-lab.com/file/site/multi-sensor-dataset) --></div>
+        
+        
+    </div>
+
+    
+    <footer class="col-md-12 text-center">
+        
+        
+        <hr>
+        <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+        
+
+        
+        
+    </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script> -->
+
+    
+    <script
+        src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

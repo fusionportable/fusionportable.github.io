@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Prcv2022 vslam evaluation - IADC FusionPortable Research</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin'
+        rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+    <script src="../../js/database.js"></script>
+
+    
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+    
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">IADC FusionPortable Research</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calibration <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../calibration/pbacalib/">PBACalib</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../calibration/lcecalib/">LCECalib</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SLAM <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../slam/fl2sam/">FL2SAM</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Perception <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../perception/tbd/">TBD</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datasets <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../dataset/fusionportable/">FusionPortable</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../dataset/fusionportable_v2/">FusionPortable_V2</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Challenges <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../prcv2022_vslam/">PRCV2022</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#overview">Overview</a></li>
+        <li class="first-level "><a href="#evaluation">Evaluation</a></li>
+        <li class="first-level "><a href="#submission-guidelines">Submission Guidelines</a></li>
+        <li class="first-level "><a href="#download">Download</a></li>
+            <li class="second-level"><a href="#calibration-files">Calibration files</a></li>
+                
+            <li class="second-level"><a href="#test-sequences">Test Sequences</a></li>
+                
+            <li class="second-level"><a href="#calibration-sequences">Calibration Sequences</a></li>
+                
+            <li class="second-level"><a href="#challenge-sequences">Challenge Sequences</a></li>
+                
+        <li class="first-level "><a href="#faq">FAQ</a></li>
+        <li class="first-level "><a href="#reference">Reference</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>This visual <a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping">SLAM</a> benchmark is based on the <strong>FusionPortable</strong> dataset, which covers a variety of environments in <a href="https://hkust.edu.hk">The Hong Kong University of Science and Technology</a> campus by utilizing multiple platforms for data collection. It provides a large range of difficult scenarios for Simultaneous Localization and Mapping (SLAM). </p>
+</li>
+<li>
+<p>All these sequences are characterized by structure-less areas and varying illumination conditions to best represent the real-world scenarios and pose great challenges to the SLAM algorithms which were verified in confined lab environments. Accurate centimeter-level ground truth of each sequence is provided for algorithm verification. Sensor data contained in the dataset includes <em>10Hz</em> LiDAR point clouds, <em>20Hz</em> stereo frame images, high-rate and asynchronous events from stereo event cameras, <em>200Hz</em> acceleration and angular velocity readings from an IMU, and <em>10Hz</em> GPS signals in the outdoor environments. </p>
+</li>
+<li>
+<p>Sensors are spatially and temporally calibrated.</p>
+</li>
+<li>
+<p>For more information, we can visit the following websits:</p>
+</li>
+<li>
+<p><a href="https://github.com/JokerJohn/PRCV-VSLAM-Challenge-2022/">Github Repo for FusionPortable-VSLAM Challenge</a></p>
+</li>
+<li>
+<p><a href="https://ram-lab.com/vslam_dataset/">homepage of FusionPortable Dataset</a></p>
+</li>
+<li>
+<p><a href="http://aiskyeye.com/challenge-2022/visual-slam/">homepage of FusionPortable-VSLAM Challenge</a></p>
+</li>
+<li>
+<p><a href="http://aiskyeye.com/">homepage of PRCV Aerial-Ground Intelligent Unmanned System Environment Perception Challenge</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/p1xEpLVKwcI0p37hxe3c7w">Introduction of PRCV challenge on Wexin Official Accounts Platform</a></p>
+</li>
+</ul>
+<p># Hardware</p>
+<p>The sensors are mounted rigidly on an aluminium platform for handheld operation. An FPGA is utilized to generate an external signal trigger to synchronize clocks of all sensors. We install the sensor rig on various platforms to simulate distinguishable motions of different equipments, including a handheld device with a gimbal stabilizer, a quadruped robot, and an autonomous vehicle. </p>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D LiDAR (<strong>not provided</strong>)</td>
+<td>Ouster OS1-128, 128 channels, 120m range</td>
+</tr>
+<tr>
+<td>Frame Camera * 2</td>
+<td>FILR BFS-U3-31S4C， resolution: 1024 × 768</td>
+</tr>
+<tr>
+<td>Event Camera * 2</td>
+<td>DAVIS346, resolution: 346 × 240，2 built-in imu</td>
+</tr>
+<tr>
+<td>IMU (body_imu)</td>
+<td>STIM300</td>
+</tr>
+<tr>
+<td>GPS</td>
+<td>ZED-F9P RTK-GPS</td>
+</tr>
+<tr>
+<td>Ground Truth</td>
+<td>Leica BLK 360</td>
+</tr>
+</tbody>
+</table>
+<p><img src="figure/multivehicle.png" alt="multivehicle" style="zoom: 67%;" /></p>
+<ul>
+<li>Calibration: The calibration file in <em>yaml</em> format can be downloaded <a href="http://aiskyeye.com/download/fusionportable-vslam-2">here</a>. We provide intrinsics &amp; extrinsics of cameras as well as noise parameters of the IMU and also the raw calibration data. Intriniscs are calibrated using the MATLAB tool, and the extrinsics are calibrated using the <a href="https://github.com/ethz-asl/kalibr">Kalibr</a>. Taking the <em>frame_cam00.yaml</em> as an example, parameters are provided in the form as follows:</li>
+</ul>
+<p><code>yaml
+  image_width: 1024
+  image_height: 768
+  camera_name: stereo_left_flir_bfsu3
+  camera_matrix: !!opencv-matrix
+    rows: 3
+    cols: 3
+    dt: f
+    data: [ 6.05128601e+02, 0., 5.21453430e+02, 
+            0., 6.04974060e+02, 3.94878479e+02, 
+            0., 0., 1. ]
+  ...
+  # extrinsics from the sensor (reference) to bodyimu (target)
+  quaternion_sensor_bodyimu: !!opencv-matrix
+    rows: 1
+    cols: 4
+    dt: f
+    data: [0.501677, 0.491365, -0.508060, 0.498754]  # (qw, qx, qy, qz)
+  translation_sensor_bodyimu: !!opencv-matrix
+    rows: 1
+    cols: 3
+    dt: f
+    data: [0.066447, -0.019381, -0.077907]
+  timeshift_sensor_bodyimu: 0.03497752745342453</code></p>
+<p>Rotational and translational calibration parameters from the camera (reference frame) to the IMU (target frame) are presented in the form of the Hamilton quaternion (<em>[qw, qx, qy, qz]</em>) and the translation vector (<em>[tx, ty, tz]</em>). The timeshift is obtained by the Kalibr.</p>
+<h1 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h1>
+<ul>
+<li>
+<p>The submission will be ranked based on the <strong>completeness</strong> and <strong>frequency</strong> of the trajectory as well as on the <strong>position accuracy (ATE)</strong>. The score is based on the ATE of individual points on the trajectory. Points with the error smaller than a distance threshold are added to your final score. This evaluation scheme is inspired by <a href="https://www.hilti-challenge.com/index.html">HILTI Challenge</a>.</p>
+</li>
+<li>
+<p>Output trajectories should be transformed into the <em>body_imu</em> frame, We will align the trajectory with the dense ground truth points using a rigid transformation. Then the Absolute Trajectory Error (ATE) of a set of discrete point is computed. At each ground truth point, extra penalty points are added to the final score depending on the amount of error at this point:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Score (points)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;= 5cm</td>
+<td>10</td>
+</tr>
+<tr>
+<td>&lt;= 30cm</td>
+<td>6</td>
+</tr>
+<tr>
+<td>&lt;= 50cm</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;= 100cm</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&gt; 100cm</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Each sequence will be evaluated over a maximum of 200 points, which leads to a maximum of  $N\times 200$ points being evaluated among $N$ sequences.</li>
+</ul>
+<p><strong>Given an example:</strong></p>
+<p><img src="figure/evaluation_example.png" style="zoom: 67%;" /></p>
+<p><img src="figure/error_example.png" alt="" style="zoom: 67%;" /></p>
+<h1 id="submission-guidelines">Submission Guidelines<a class="headerlink" href="#submission-guidelines" title="Permanent link">&para;</a></h1>
+<ul>
+<li>
+<p>Trajectory Results</p>
+</li>
+<li>
+<p>Please upload a .zip file consisting of a list of text files named as the <em>sequence name</em> shown as follows:</p>
+</li>
+</ul>
+<p><code>20220215_canteen_night.txt
+  20220215_garden_night.txt
+  20220219_MCR_slow_00.txt
+  20220226_campus_road_day.txt
+  ....</code></p>
+<ul>
+<li>The text files should have the following contents:</li>
+</ul>
+<p><code>1644928761.036623716 0.0 0.0 0.0 0.0 0.0 0.0 1.0
+  ....</code></p>
+<p>Each row contains <em>timestamp_s tx ty tz qx qy qz qw</em>. The timestamps are in the unit of second which are used to establish temporal correspondences with the groundtruth. The first pose should be no later than the starting time specified above, and only poses after the starting time will be used for evaluation.</p>
+<ul>
+<li>
+<p>The poses should specify the poses of the body IMU in the world frame. If the estimated poses are in the frame of other sensors, one should transform these poses into the world frame of the body IMU as <code>T_bodyw_body = T_body_sensor * T_sensorw_sensor * T_body_sensor^(-1);</code>.</p>
+</li>
+<li>
+<p>Do not publicly release your trajectory estimates, as we might re-use some of the datasets for future competitions.</p>
+</li>
+</ul>
+<h1 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h1>
+<p>We provide the compressed rosbag data, remember to execute the following command to decompress them.</p>
+<pre><code class="language-bash"># example: 20220216_garden_day_ref_compressed
+rosbag decompress 20220216_garden_day.bag
+</code></pre>
+<h2 id="calibration-files">Calibration files<a class="headerlink" href="#calibration-files" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Yaml Files</th>
+<th>Describtion</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body_imu</td>
+<td>extrinsics and intrinsics of  STIM300</td>
+<td><a href="http://prcv-download.natapp1.cc/calib/body_imu.yaml">body_imu.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam00</td>
+<td>extrinsics and intrinsics of the left event camera</td>
+<td><a href="http://prcv-download.natapp1.cc/calib/event_cam00.yaml">event_cam00.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam00_imu</td>
+<td>extrinsics and intrinsics of the left event camera imu</td>
+<td><a href="http://prcv-download.natapp1.cc/calib/event_cam00_imu.yaml">event_cam00_imu.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam01</td>
+<td>extrinsics and intrinsics of the right event camera</td>
+<td><a href="http://prcv-download.natapp1.cc/calib/event_cam01.yaml">event_cam01.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam01_imu</td>
+<td>extrinsics and intrinsics of the right event camera imu</td>
+<td><a href="http://prcv-download.natapp1.cc/calib/event_cam01_imu.yaml">event_cam01_imu.yaml</a></td>
+</tr>
+<tr>
+<td>frame_cam00</td>
+<td>extrinsics and intrinsics of the left flir camera</td>
+<td><a href="http://prcv-download.natapp1.cc/calib/frame_cam00.yaml">frame_cam00.yaml</a></td>
+</tr>
+<tr>
+<td>frame_cam01</td>
+<td>extrinsics and intrinsics of the right flir camera</td>
+<td><a href="http://prcv-download.natapp1.cc/calib/frame_cam01.yaml">frame_cam01.yaml</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="test-sequences">Test Sequences<a class="headerlink" href="#test-sequences" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th></th>
+<th>Sequence</th>
+<th>Compressed Bag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handheld</td>
+<td><img src="figure/garden.png" alt="Garden" style="zoom:25%;" /></td>
+<td>20220216_garden_day</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_garden_day.bag">20.4GB</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="calibration-sequences">Calibration Sequences<a class="headerlink" href="#calibration-sequences" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th></th>
+<th>Sequence</th>
+<th>Compressed Bag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handheld</td>
+<td><img src="figure/mcr.png" alt="Motion Capture Room" style="zoom:23%;" /></td>
+<td><strong>comming soon!!!!</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="challenge-sequences">Challenge Sequences<a class="headerlink" href="#challenge-sequences" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th></th>
+<th>Sequence</th>
+<th>Compressed Bag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handheld</td>
+<td><img src="figure/canteen.png" alt="Canteen" style="zoom:25%;" /></td>
+<td>20220216_canteen_night</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220215_canteen_night.bag">15.9GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_canteen_day</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_canteen_day.bag">17.0GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="figure/garden.png" alt="Garden" style="zoom:25%;" /></td>
+<td>20220215_garden_night</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220215_garden_night.bag">8.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_garden_day</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_garden_day.bag">20.4GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="figure/corridor.jpg" alt="Canteen" style="zoom:4.2%;" /></td>
+<td>20220216_corridor_day</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_corridor_day.bag">27.4GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="figure/escalator.jpg" alt="Canteen" style="zoom:3%;" /></td>
+<td>20220216_escalator_day</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_escalator_day.bag">31.7GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="figure/building.png" alt="Buliding" style="zoom:25%;" /></td>
+<td>20220225_building_day</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220225_building_day.bag">37.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="figure/mcr.png" alt="Motion Capture Room" style="zoom:23%;" /></td>
+<td>20220216_MCR_slow</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_MCR_slow.bag">3.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_MCR_normal</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_MCR_normal.bag">2.2GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_MCR_fast</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220216_MCR_fast.bag">1.7GB</a></td>
+</tr>
+<tr>
+<td>Quadruped Robot</td>
+<td><img src="figure/mcr_normal_00.png" alt="MCR_slow_00" style="zoom:15%;" /></td>
+<td>20220219_MCR_slow_00</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220219_MCR_slow_00.bag">9.7GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_slow_01</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220219_MCR_slow_01.bag">8.4GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_normal_00</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220219_MCR_normal_00.bag">7.1GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_normal_01</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220219_MCR_normal_01.bag">6.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_fast_00</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220219_MCR_fast_00.bag">7.6GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_fast_01</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220219_MCR_fast_01.bag">8.5GB</a></td>
+</tr>
+<tr>
+<td>Apollo Vehicle</td>
+<td><img src="figure/campus_road.png" alt="Campus Road" style="zoom:19%;" /></td>
+<td>20220226_campus_road</td>
+<td><a href="http://prcv-download.natapp1.cc/compressed/20220226_campus_road_day.bag">72.3GB</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Detailed statistics are shown:</li>
+</ul>
+<p><img src="figure/statistics_dataset.png" style="zoom: 67%;" /></p>
+<ul>
+<li>Download link can be found <a href="http://aiskyeye.com/download/fusionportable-vslam-2/">here</a></li>
+</ul>
+<h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
+<ul>
+<li><strong>How are the frames defined on the sensor setup?</strong></li>
+</ul>
+<p>The picture below is a schematic illustration of the reference frames (red = x, green = y, blue = z):</p>
+<p><img alt="image-20220729210904964" src="figure/frames.png" /></p>
+<ul>
+<li><strong>How are the results scored?</strong></li>
+</ul>
+<p>The results submitted by each team will be scored based on the completeness and ATE accuracy of the trajectories. All the results will be displayed in  the live leaderboard. Each trajectory will be scored based on the standard evaluation points, the accumulation of the scores of all these evaluation points is normalized to 100 points to get the final score of the sequence. Each evaluation point can get 0-10 points according to its accuracy.</p>
+<ul>
+<li><strong>Will the organizer provide the calibration datasets of the IMU and camera?</strong></li>
+</ul>
+<p>Of course, we will provide the calibration data of IMU and cameras.</p>
+<ul>
+<li><strong>Is the ground truth available?</strong></li>
+</ul>
+<p>We will provide some sample datasets along with their ground truth collected with the same sensor kit, but the ground truth for the challenge sequences is not available. However, you can submit your own results in the website evaluation system for evaluation.</p>
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h1>
+<p><em>[1] Jianhao Jiao, Hexiang Wei, Tianshuai Hu, Xiangcheng Hu, etc., Lujia Wang, Ming Liu, FusionPortable: A Multi-Sensor Campus-Scene Dataset for Evaluation of Localization and Mapping Accuracy on Diverse Platforms, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2022, Kyoto, Japan.</em></p>
+<p>[2] <a href="https://www.hilti-challenge.com/index.html">HILTI Challenge</a>.</p></div>
+        
+        
+    </div>
+
+    
+    <footer class="col-md-12 text-center">
+        
+        
+        <hr>
+        <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+        
+
+        
+        
+    </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script> -->
+
+    
+    <script
+        src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

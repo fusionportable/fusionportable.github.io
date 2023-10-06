@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>PRCV2022 - IADC FusionPortable Research</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin'
+        rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+    <script src="../../js/database.js"></script>
+
+    
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+    
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">IADC FusionPortable Research</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calibration <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../calibration/pbacalib/">PBACalib</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../calibration/lcecalib/">LCECalib</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SLAM <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../slam/fl2sam/">FL2SAM</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Perception <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../perception/tbd/">TBD</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datasets <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../dataset/fusionportable/">FusionPortable</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../dataset/fusionportable_v2/">FusionPortable_V2</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Challenges <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">PRCV2022</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../dataset/fusionportable_v2/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#introduction">Introduction</a></li>
+        <li class="first-level "><a href="#latest-news">Latest News</a></li>
+        <li class="first-level "><a href="#evaluation">Evaluation</a></li>
+            <li class="second-level"><a href="#evaluation-method">Evaluation Method</a></li>
+                
+            <li class="second-level"><a href="#leaderboard">Leaderboard</a></li>
+                
+            <li class="second-level"><a href="#submission-guidelines">Submission Guidelines</a></li>
+                
+        <li class="first-level "><a href="#download">Download</a></li>
+            <li class="second-level"><a href="#calibration-files">Calibration Files</a></li>
+                
+            <li class="second-level"><a href="#test-sequences">Test Sequences</a></li>
+                
+            <li class="second-level"><a href="#calibration-sequences">Calibration Sequences</a></li>
+                
+            <li class="second-level"><a href="#challenge-sequences">Challenge Sequences</a></li>
+                
+        <li class="first-level "><a href="#faq">FAQ</a></li>
+        <li class="first-level "><a href="#star-history">Star History</a></li>
+        <li class="first-level "><a href="#publication">Publication</a></li>
+        <li class="first-level "><a href="#acknowledgement">Acknowledgement</a></li>
+        <li class="first-level "><a href="#license">License</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1>PRCV2022</h1>
+<h4>The FusionPortable-VSLAM Challenge</h4>
+
+<!-- <table id='scores-shown' class='table table-responsive'>
+   <thead>
+       <tr>
+           <th></th>
+           <th>Method</th>
+           <th>Code</th>
+           <th>Error</th>
+           <th>Date</th>
+       </tr>
+   </thead>
+</table>
+ -->
+
+<p><img alt="image" src="../../figure/challenge/prcv2022/prcv.jpg" /></p>
+<p align="center">
+   ⏬ <a href="https://ram-lab.com/file/site/multi-sensor-dataset/" target="_blank">Dataset</a> 
+   | 🪧 <a href="http://aiskyeye.com/challenge-2022/visual-slam/">Challenge</a>
+   | 🏫 <a href="https://ram-lab.com/vslam_dataset/">RAM-LAB</a>
+   | 🧱 <a href="https://mp.weixin.qq.com/s/p1xEpLVKwcI0p37hxe3c7w">VisDrone</a>
+   | 📧 <a href="mailto:xhubd@connect.ust.hk">Email</a>
+   | 📝 <a href="../challenge/prcv2022_vslam_evaluation.md">Docs</a>
+   | 📃 <a href="../../files/jiao2022fusionportable.pdf">Paper</a> 
+   <br>
+</p>
+
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>This visual <a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping">SLAM</a> benchmark is based on the FusionPortable dataset, which covers a variety of environments in <a href="https://hkust.edu.hk">The Hong Kong University of Science and Technology</a> campus by utilizing <strong>multiple platforms</strong> for data collection. It provides a large range of difficult scenarios for Simultaneous Localization and Mapping (SLAM). </li>
+<li>All these sequences are characterized by <strong>structure-less areas</strong> and <strong>varying illumination conditions</strong> to best represent the real-world scenarios and pose great challenges to the SLAM algorithms which were verified in confined lab environments. </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D LiDAR (<strong>not provided</strong>)</td>
+<td>Ouster OS1-128, 128 channels, 120m range</td>
+</tr>
+<tr>
+<td>Frame Camera * 2</td>
+<td>FILR BFS-U3-31S4C， resolution: 1024 × 768</td>
+</tr>
+<tr>
+<td>Event Camera * 2</td>
+<td>DAVIS346, resolution: 346 × 240，2 built-in imu</td>
+</tr>
+<tr>
+<td>IMU (body_imu)</td>
+<td>STIM300</td>
+</tr>
+<tr>
+<td>GPS</td>
+<td>ZED-F9P RTK-GPS</td>
+</tr>
+<tr>
+<td>Ground Truth</td>
+<td>Leica BLK360 Imaging Laser Scanner</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../../figure/challenge/prcv2022/multivehicle.png" alt="multivehicle" style="zoom: 67%;" /></p>
+<h3 id="latest-news">Latest News<a class="headerlink" href="#latest-news" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[08.10]: the evaluation codes released!</li>
+<li>[08.09]: the ground thruth of <strong>20220216_garden_day</strong> released!</li>
+<li>[08.07]: calibration dataset released.</li>
+<li>[08.01]: challenge data sequences released.</li>
+</ul>
+<h3 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h3>
+<h4 id="evaluation-method">Evaluation Method<a class="headerlink" href="#evaluation-method" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>We provide the tools for the trajectory evaluation <a href="https://github.com/JokerJohn/PRCV-VSLAM-Challenge-2022/tree/main/prcv2022_evaluation">here</a>.</p>
+</li>
+<li>
+<p>The submission will be ranked based on the <strong>completeness</strong> and <strong>frequency</strong> of the trajectory as well as on the <strong>position accuracy (ATE)</strong>. The score is based on the ATE of individual points on the trajectory. Points with the error smaller than a distance threshold are added to your final score. This evaluation scheme is inspired by <a href="https://www.hilti-challenge.com/index.html">HILTI Challenge</a>.</p>
+</li>
+<li>
+<p>Output trajectories should be transformed into the <em>body_imu</em> frame, We will align the trajectory with the dense ground truth points using a rigid transformation. Then the Absolute Trajectory Error (ATE) of a set of discrete point is computed. At each ground truth point, extra penalty points are added to the final score depending on the amount of error at this point:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Score (points)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;= 5cm</td>
+<td>10</td>
+</tr>
+<tr>
+<td>&lt;= 30cm</td>
+<td>6</td>
+</tr>
+<tr>
+<td>&lt;= 50cm</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;= 100cm</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&gt; 100cm</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Each sequence will be evaluated over a maximum of 200 points, which leads to a maximum of  $N\times 200$ points being evaluated among $N$ sequences.</li>
+</ul>
+<p><strong>Given an example:</strong></p>
+<p><img src="../../figure/challenge/prcv2022/evaluation_example.png" style="zoom: 67%;" /></p>
+<p><img src="../../figure/challenge/prcv2022/error_example.png" alt="" style="zoom: 67%;" /></p>
+<h4 id="leaderboard"><a href="http://aiskyeye.com/leaderboard/">Leaderboard</a><a class="headerlink" href="#leaderboard" title="Permanent link">&para;</a></h4>
+<p>Sign up for an account and submit your results in the evaluation system, the live leaderboard will update your ranking.</p>
+<p><img alt="image-20220810030116770" src="../../figure/challenge/prcv2022/image-20220810030116770.png" /></p>
+<h4 id="submission-guidelines">Submission Guidelines<a class="headerlink" href="#submission-guidelines" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Trajectory Results</p>
+</li>
+<li>
+<p>Please upload a .zip file consisting of a list of text files named as the <em>sequence name</em> shown as follows:</p>
+<p><pre><code class="shell">traj/20220215_canteen_night.txt
+traj/20220215_garden_night.txt
+traj/20220219_MCR_slow_00.txt
+traj/20220226_campus_road_day.txt
+....</code></pre></p>
+</li>
+<li>
+<p>These text files should put in a folder of <strong>"traj"</strong>, and then compress as a <em>.zip file, such as "</em><em>traj.zip</em>*"</p>
+</li>
+</ul>
+<p><img src="../../figure/challenge/prcv2022/image-20220808182432457.png" alt="image-20220808182432457" style="zoom:33%;" /></p>
+<ul>
+<li>
+<p>The text files should have the following contents(TUM format):</p>
+<p><pre><code class="shell">1644928761.036623716 0.0 0.0 0.0 0.0 0.0 0.0 1.0
+....</code></pre></p>
+</li>
+</ul>
+<p>Each row contains <em>timestamp_s tx ty tz qx qy qz qw</em>. The timestamps are in the unit of second which are used to establish temporal correspondences with the groundtruth. The first pose should be no later than the starting time specified above, and only poses after the starting time will be used for evaluation.</p>
+<ul>
+<li>
+<p>The poses should specify the poses of the body IMU in the world frame. If the estimated poses are in the frame of other sensors, one should transform these poses into the world frame of the body IMU as <code>T_bodyw_body = T_body_sensor * T_sensorw_sensor * T_body_sensor^(-1);</code>.</p>
+</li>
+<li>
+<p>Do not publicly release your trajectory estimates, as we might re-use some of the datasets for future competitions.</p>
+</li>
+<li>
+<p><strong>A team can only register one account.</strong> <strong>Quota can only be obtained by joining the WeChat group</strong>. In order to prevent the problem of a team registering multiple accounts, this competition requires <strong>all members</strong> of the participating team to <strong>join the WeChat group</strong>. And <strong>the old account cannot be used, you need to re-register a new account</strong>.</p>
+</li>
+</ul>
+<h3 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
+<p>All data download addresses can be found in this directory ：<a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/">📁</a></p>
+<p>We provide the compressed rosbag data, remember to execute the following command to decompress them.</p>
+<pre><code class="shell">rosbag decompress 20220216_garden_day.bag</code></pre>
+
+<h4 id="calibration-files">Calibration Files<a class="headerlink" href="#calibration-files" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Yaml Files</th>
+<th>Describtion</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body_imu</td>
+<td>extrinsics and intrinsics of the STIM300</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/calib/body_imu.yaml">body_imu.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam00</td>
+<td>extrinsics and intrinsics of the left event camera</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/calib/event_cam00.yaml">event_cam00.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam00_imu</td>
+<td>extrinsics and intrinsics of the left event camera imu</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/calib/event_cam00_imu.yaml">event_cam00_imu.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam01</td>
+<td>extrinsics and intrinsics of the right event camera</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/calib/event_cam01.yaml">event_cam01.yaml</a></td>
+</tr>
+<tr>
+<td>event_cam01_imu</td>
+<td>extrinsics and intrinsics of the right event camera imu</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/calib/event_cam01_imu.yaml">event_cam01_imu.yaml</a></td>
+</tr>
+<tr>
+<td>frame_cam00</td>
+<td>extrinsics and intrinsics of the left flir camera</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/calib/frame_cam00.yaml">frame_cam00.yaml</a></td>
+</tr>
+<tr>
+<td>frame_cam01</td>
+<td>extrinsics and intrinsics of the right flir camera</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/calib/frame_cam01.yaml">frame_cam01.yaml</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="test-sequences">Test Sequences<a class="headerlink" href="#test-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th></th>
+<th>Sequence</th>
+<th>Compressed Bag</th>
+<th>Ground Truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handheld</td>
+<td><img src="../../figure/challenge/prcv2022/garden.png" alt="Garden" style="zoom:25%;" /></td>
+<td>20220216_garden_day</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/sample/20220216_garden_day.bag">20.4GB</a></td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/sample/20220216_garden_day.txt">20220216_garden_day.txt</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="calibration-sequences">Calibration Sequences<a class="headerlink" href="#calibration-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th></th>
+<th>Sequence</th>
+<th>Compressed Bag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handheld</td>
+<td><img src="../../figure/challenge/prcv2022/Checkerboard_Small.png" alt="Motion Capture Room" style="zoom:23%;" /></td>
+<td>20220209_StaticTarget_SmallCheckerBoard_9X12_30mm</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220209_StaticTarget_SmallCheckerBoard_9X12_30mm.bag">6.7GB</a></td>
+</tr>
+<tr>
+<td>Handheld</td>
+<td><img src="../../figure/challenge/prcv2022/Checkerboard_Big.png" alt="Motion Capture Room" style="zoom:23%;" /></td>
+<td>20220215_DynamicTarget_BigCheckerBoard_7X10_68mm</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220215_DynamicTarget_BigCheckerBoard_7X10_68mm.bag">2.3GB</a></td>
+</tr>
+<tr>
+<td>Handheld</td>
+<td><img src="../../figure/challenge/prcv2022/allan.png" alt="Motion Capture Room" style="zoom:50%;" /></td>
+<td>20220209_Static_IMUs_3h20mins</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220209_Static_IMUs_3h20mins.bag">894MB</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="challenge-sequences">Challenge Sequences<a class="headerlink" href="#challenge-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th></th>
+<th>Sequence</th>
+<th>Compressed Bag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handheld</td>
+<td><img src="../../figure/challenge/prcv2022/canteen.png" alt="Canteen" style="zoom:25%;" /></td>
+<td>20220216_canteen_night</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220215_canteen_night.bag">15.9GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_canteen_day</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220216_canteen_day.bag">17.0GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="../../figure/challenge/prcv2022/garden.png" alt="Garden" style="zoom:25%;" /></td>
+<td>20220215_garden_night</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220215_garden_night.bag">8.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_garden_day</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220216_garden_day.bag">20.4GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="../../figure/challenge/prcv2022/corridor.jpg" alt="Canteen" style="zoom:4.2%;" /></td>
+<td>20220216_corridor_day</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220216_corridor_day.bag">27.4GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="../../figure/challenge/prcv2022/escalator.jpg" alt="Canteen" style="zoom:3%;" /></td>
+<td>20220216_escalator_day</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220216_escalator_day.bag">31.7GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="../../figure/challenge/prcv2022/building.png" alt="Buliding" style="zoom:25%;" /></td>
+<td>20220225_building_day</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220225_building_day.bag">37.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="../../figure/challenge/prcv2022/mcr.png" alt="Motion Capture Room" style="zoom:23%;" /></td>
+<td>20220216_MCR_slow</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220216_MCR_slow.bag">3.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_MCR_normal</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220216_MCR_normal.bag">2.2GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220216_MCR_fast</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220216_MCR_fast.bag">1.7GB</a></td>
+</tr>
+<tr>
+<td>Quadruped Robot</td>
+<td><img src="../../figure/challenge/prcv2022/mcr_normal_00.png" alt="MCR_slow_00" style="zoom:15%;" /></td>
+<td>20220219_MCR_slow_00</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220219_MCR_slow_00.bag">9.7GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_slow_01</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220219_MCR_slow_01.bag">8.4GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_normal_00</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220219_MCR_normal_00.bag">7.1GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_normal_01</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220219_MCR_normal_01.bag">6.5GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_fast_00</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220219_MCR_fast_00.bag">7.6GB</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20220219_MCR_fast_01</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220219_MCR_fast_01.bag">8.5GB</a></td>
+</tr>
+<tr>
+<td>Apollo Vehicle</td>
+<td><img src="../../figure/challenge/prcv2022/campus_road.png" alt="Campus Road" style="zoom:19%;" /></td>
+<td>20220226_campus_road</td>
+<td><a href="http://443r4f2626.goho.co:8888/PRCV2022_challenge_vslam_data/compressed/20220226_campus_road_day.bag">72.3GB</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>How are the frames defined on the sensor setup?</strong></li>
+</ul>
+<p>The picture below is a schematic illustration of the reference frames (red = x, green = y, blue = z):</p>
+<p><img alt="image-20220729210904964" src="../../figure/challenge/prcv2022/frames.png" /></p>
+<ul>
+<li><strong>Is the ground truth available?</strong></li>
+</ul>
+<p>We will provide some sample datasets along with their ground truth collected with the same sensor kit, but the ground truth for the challenge sequences is not available. However, you can submit your own results in the website evaluation system for evaluation.<strong>The ground truth for all challenge sequences will finally be announced at the PRCV WORKSHOP in October.</strong></p>
+<h3 id="star-history">Star History<a class="headerlink" href="#star-history" title="Permanent link">&para;</a></h3>
+<p><a href="https://star-history.com/#JokerJohn/PRCV-VSLAM-Challenge-2022&amp;Date"><img alt="Star History Chart" src="https://api.star-history.com/svg?repos=JokerJohn/PRCV-VSLAM-Challenge-2022&amp;type=Date-16604675791593.svg+xml" /></a></p>
+<h3 id="publication">Publication<a class="headerlink" href="#publication" title="Permanent link">&para;</a></h3>
+<p>When using this work in an academic context, please cite the following paper:</p>
+<p><strong>FusionPortable: A Multi-Sensor Campus-Scene Dataset for Evaluation of Localization and Mapping Accuracy on Diverse Platforms</strong><br/>
+<span style="color: gray">Jianhao Jiao*, Hexiang Wei*, Tianshuai Hu*, Xiangcheng Hu*, Yilong Zhu, Zhijian He, Jin Wu, Jingwen Yu, Xupeng Xie, Huaiyang Huang, Ruoyu Geng, Lujia Wang, Ming Liu</span><br/>
+<em>Presented at IROS 2022</em><br/>
+<a href="../../files/jiao2022fusionportable.pdf">[paper]</a>
+<a href="bib/jiao2022fusionportable.bib">[bibtex]</a></p>
+<!-- ```
+@article{,
+  author    = {Jianhao Jiao and Hexiang Wei and Tianshuai Hu and Xiangcheng Hu and Yilong Zhu and Zhijian He and Jin Wu and Jingwen Yu and Xupeng Xie and Huaiyang Huang and Ruoyu Geng and Lujia Wang and Ming Liu},
+  title     = {FusionPortable: A Multi-Sensor Campus-Scene Dataset for Evaluation of Localization and Mapping Accuracy on Diverse Platforms},
+  booktitle = {2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year      = {2022}
+}
+``` -->
+
+<h3 id="acknowledgement">Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permanent link">&para;</a></h3>
+<p>This challenge was supported by the <strong><a href="http://www.vlg.com.cn/index.aspx">Wireless Technology</a></strong>.</p>
+<p>We would like to thank the <strong>AISKYEYE Team</strong> at Lab of Machine Learning and Data Mining of Tianjin University, for hosting our challenge at the PRCV2022 workshop. Futher, this challenge would not have been possible without the assistance of Prof.Ming Liu, Prof.Lujia Wang, Prof.Pengfei Zhu, Prof.Dingwen Zhang, Dr.Zhijian He and Dr.Jianhao Jiao for the great support in organizing the challenge, verifying the data and providing the <a href="https://hilti-challenge.com/">HILTI Challenge 2022</a> as template for this challenge. </p>
+<p>We would also like to thank Prof.Jack Chin Pang CHENG and his team for the support of dense mapping device.</p>
+<h3 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
+<p>All datasets and benchmarks on this page are copyright by us and published under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons license (CC BY-NC-SA 3.0)</a>, which is free for non-commercial use (including research).</p></div>
+        
+        
+    </div>
+
+    
+    <footer class="col-md-12 text-center">
+        
+        
+        <hr>
+        <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+        
+
+        
+        
+    </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script> -->
+
+    
+    <script
+        src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
