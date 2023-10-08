@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>FusionPortable - IADC FusionPortable Research</title>
+    <title>FusionPortable - FusionPortable Research</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -66,7 +66,7 @@
             <!-- Main title -->
 
             
-              <a class="navbar-brand" href="../..">IADC FusionPortable Research</a>
+              <a class="navbar-brand" href="../..">FusionPortable Research</a>
             
         </div>
 
@@ -202,7 +202,7 @@
                 
             <li class="second-level"><a href="#robots">Robots</a></li>
                 
-            <li class="second-level"><a href="#data-collection-process">Data Collection Process</a></li>
+            <li class="second-level"><a href="#examples-of-data-collection">Examples of Data Collection</a></li>
                 
         <li class="first-level "><a href="#download">Download</a></li>
             <li class="second-level"><a href="#data-organization">Data Organization</a></li>
@@ -212,6 +212,9 @@
                 <li class="third-level"><a href="#sequences">Sequences</a></li>
                 <li class="third-level"><a href="#some-high-resolution-gt-maps">Some High-Resolution GT Maps</a></li>
         <li class="first-level "><a href="#tools">Tools</a></li>
+        <li class="first-level "><a href="#evaluation">Evaluation</a></li>
+            <li class="second-level"><a href="#evalaution-of-trajectories">Evalaution of Trajectories</a></li>
+                
         <li class="first-level "><a href="#issues">Issues</a></li>
         <li class="first-level "><a href="#publications">Publications</a></li>
     </ul>
@@ -251,7 +254,7 @@
   <img src="../../figure/dataset/fusionportable/multivehicle.png" width="90%" />
 </p>
 
-<h3 id="data-collection-process">Data Collection Process<a class="headerlink" href="#data-collection-process" title="Permanent link">&para;</a></h3>
+<h3 id="examples-of-data-collection">Examples of Data Collection<a class="headerlink" href="#examples-of-data-collection" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -277,37 +280,32 @@
 <h3 id="data-organization">Data Organization<a class="headerlink" href="#data-organization" title="Permanent link">&para;</a></h3>
 <pre><code class="shell">
 FusionPortable/
-├── calibration_files/                     // intrinsics & extrinsics of sensors
-    └── 20220209_calib/
-        ├── ouster00.yaml
-        ├── frame_cam00.yaml
-        └── ...
+├── calibration_files/               // Intrinsics & extrinsics of sensors
+  └── 20220209_calib/
+    └── &ltsensor_name&gt.yaml           // e.g., ouster00.yaml, frame_cam00.yaml 
 ├── groundtruth/
-    └── map/                               // ground-truth maps
-      └── 20220216_canteen/
-        ├── scan/
-            ├── 000000.pcd                 // individual scan files
-            └── ...
-        ├── merged_scan.pcd                // ground-truth map (resolution: 1cm)
-        └── transformation.yaml            // TF of each individual scan
-    └── traj/                              // ground-truth trajectories 
-      └── 20220215_canteen_night.txt  
+  └── map/                           // Ground-truth maps
+    └── &ltdate_env&gt/
+      ├── scan/
+        └── &ltscan_id&gt.pcd            // Individual scan
+      ├── merged_scan.pcd            // Merged scan (resolution: 1cm)
+      └── transformation.yaml        // Transformation of each scan
+  └── traj/                          // Ground-truth trajectories 
+    └── &ltdate_env&gt.txt               // e.g., 20220215_canteen_night.txt
 └── sensor_data/
-    └── handheld/                          // data collection platforms
-      └── 20220215_canteen_night           // sensor data are stored
-        ├── 20220215_canteen_night.bag
-        ├── 20220215_canteen_night.bag.7z  // compressed ROS bag
-        ├── data/
-        └── data_ref_kitti/
-    ├── quadrupedal_robot/
-    └── apollo/
+  └── &ltplatform&gt/                    // Platforms, e.g., handheld
+    └── &ltdate_env&gt                   // e.g., 20220215_canteen_night
+      ├── &ltdate_env&gt.bag             
+      ├── &ltdate_env&gt.bag.7z  
+      ├── data/
+      └── data_ref_kitti/
 </code></pre>
 
 <div class="bs-callout bs-callout-default">
   <h4>Note:</h4>
-  1. <code>env.bag</code> is the raw rosbag.<br>
+  1. <code>&ltdate_env&gt.bag</code> is the raw rosbag.<br>
   <!-- 2. <code>env_ref.bag</code> is the refined rosbag where sensor data are post-processed [1].<br> -->
-  2. <code>data/</code> stores sensor data files. Each file has the timestamp from <code>timestamps.txt</code>.<br>
+  2. <code>data/</code> stores indivisual sensor data files with timestamps from <code>timestamps.txt</code>.<br>
   3. <code>data_ref_kitti/</code> follows the KITTI format to store sensor data files from <code>data/</code>.<br>
 </div>
 
@@ -323,7 +321,7 @@ FusionPortable/
   3. <a href="http://filebrowser.ram-lab.com/share/I67uNo6q">calibration_files</a> -
   pwd: fusionportable
   <br>
-  <p>Note: Extract the ROS bag from .7z files in the terminal: <code>7z e data.7z</code></p>
+  <p>Note: Extract the ROS bag from .7z files in the terminal: <code>7z e &ltfilename&gt.7z</code></p>
 </div>
 
 <h4 id="sequences">Sequences<a class="headerlink" href="#sequences" title="Permanent link">&para;</a></h4>
@@ -521,12 +519,15 @@ Download the dataset by clicking the button below, and log
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <p>The dataset tool can be used by clicking the button below</p>
 <p><a href="https://github.com/HKUSTGZ-IADC/iadc_dataset_tools"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Dataset Tool</button></a></p>
-<!-- ## Evaluation
-### Evalaution of Trajectories
+<h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h2>
+<h3 id="evalaution-of-trajectories">Evalaution of Trajectories<a class="headerlink" href="#evalaution-of-trajectories" title="Permanent link">&para;</a></h3>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable/eval_localization_accuracy.png" alt="Localization Accuracy" width="70%" />
+</p>
 
-### Evaluation of Mapping Results
+<!-- ### Evaluation of Mapping Results -->
 
-### Baseline Algorithms
+<!-- ### Baseline Algorithms
 | Sensor                         | Algorithm   | Link |
 | :----------------------------- | :---------- | :--- |
 | IMU + Stereo Vision            | VINS-Fusion | xxx  |
@@ -548,7 +549,7 @@ Download the dataset by clicking the button below, and log
 <span style="color: gray">Jianhao Jiao*, Hexiang Wei*, Tianshuai Hu*, Xiangcheng Hu*, Yilong Zhu, Zhijian He, Jin Wu, Jingwen Yu, Xupeng Xie, Huaiyang Huang, Ruoyu Geng, Lujia Wang, Ming Liu</span><br/>
 <em>Presented at IROS 2022</em><br/>
 <a href="../../files/jiao2022fusionportable.pdf">[paper]</a>
-<a href="bib/jiao2022fusionportable.bib">[bibtex]</a></li>
+<a href="../../bib/jiao2022fusionportable.bib">[bibtex]</a></li>
 </ol>
 <!-- [[video]]() -->
 <!-- [[page]](https://ram-lab.com/file/site/multi-sensor-dataset) --></div>

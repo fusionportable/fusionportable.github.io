@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>FusionPortable_V2 - IADC FusionPortable Research</title>
+    <title>FusionPortable_V2 - FusionPortable Research</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -66,7 +66,7 @@
             <!-- Main title -->
 
             
-              <a class="navbar-brand" href="../..">IADC FusionPortable Research</a>
+              <a class="navbar-brand" href="../..">FusionPortable Research</a>
             
         </div>
 
@@ -252,40 +252,35 @@
 
 <h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
 <h3 id="data-organization">Data Organization<a class="headerlink" href="#data-organization" title="Permanent link">&para;</a></h3>
-<!-- <pre><code class="shell">
+<pre><code class="shell">
 FusionPortable/
-├── calibration_files/                     // intrinsics & extrinsics of sensors
-    └── 20220209_calib/
-        ├── ouster00.yaml
-        ├── frame_cam00.yaml
-        └── ...
+├── calibration_files/               // Intrinsics & extrinsics of sensors
+  └── 20230426_calib/
+    └── &ltsensor_name&gt.yaml           // e.g., ouster00.yaml, frame_cam00.yaml 
 ├── groundtruth/
-    └── map/                               // ground-truth maps
-      └── 20220216_canteen/
-        ├── scan/
-            ├── 000000.pcd                 // individual scan files
-            └── ...
-        ├── merged_scan.pcd                // ground-truth map (resolution: 1cm)
-        └── transformation.yaml            // TF of each individual scan
-    └── traj/                              // ground-truth trajectories 
-      └── 20220215_canteen_night.txt  
+  └── map/                           // Ground-truth maps
+    └── &ltdate_env&gt/
+      ├── scan/
+        └── &ltscan_id&gt.pcd            // Individual scan
+      ├── merged_scan.pcd            // Merged scan (resolution: 1cm)
+      └── transformation.yaml        // Transformation of each scan
+  └── traj/                          // Ground-truth trajectories 
+    └── &ltdate_env&gt.txt               // e.g., 20220215_canteen_night.txt
 └── sensor_data/
-    └── handheld/                          // data collection platforms
-      └── 20220215_canteen_night           // sensor data are stored
-        ├── 20220215_canteen_night.bag
-        ├── 20220215_canteen_night.bag.7z  // compressed ROS bag
-        ├── data/
-        └── data_ref_kitti/
-    ├── quadrupedal_robot/
-    └── apollo/
+  └── &ltplatform&gt/                    // Platforms, e.g., handheld
+    └── &ltdate_env&gt                   // e.g., 20220215_canteen_night
+      ├── &ltdate_env&gt.bag             
+      └── &ltdate_env&gt.bag.7z  
 </code></pre>
+<!-- ├── data/
+└── data_ref_kitti/ -->
 
 <div class="bs-callout bs-callout-default">
   <h4>Note:</h4>
-  1. <code>env.bag</code> is the raw rosbag.<br>
-  2. <code>data/</code> stores sensor data files. Each file has the timestamp from <code>timestamps.txt</code>.<br>
+  1. <code>&ltdate_env&gt.bag</code> is the raw rosbag.<br>
+  2. <code>data/</code> stores indivisual sensor data files with timestamps from <code>timestamps.txt</code>.<br>
   3. <code>data_ref_kitti/</code> follows the KITTI format to store sensor data files from <code>data/</code>.<br>
-</div> -->
+</div>
 
 <h3 id="download_1">Download<a class="headerlink" href="#download_1" title="Permanent link">&para;</a></h3>
 <!-- <div class="bs-callout bs-callout-info">
@@ -306,7 +301,7 @@ FusionPortable/
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"><div style="width:100px">Time</div></th>
+<th style="text-align: center;"><div style="width:100px">Collection Time</div></th>
 <th style="text-align: center;"><div style="width:30px">Platform</div></th>
 <th style="text-align: center;">Picture</th>
 <th style="text-align: center;">Sequence</th>
@@ -316,52 +311,52 @@ FusionPortable/
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">20230520, 15:15</td>
+<td style="text-align: center;">20230520-15:15</td>
 <td style="text-align: center;">Handheld</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">room00</td>
 <td style="text-align: center;">Dynamic, Dynamic, Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230520, 15:19</td>
+<td style="text-align: center;">20230520-15:19</td>
 <td style="text-align: center;">Handheld</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">room01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230520, 10:36</td>
+<td style="text-align: center;">20230520-10:36</td>
 <td style="text-align: center;">Handheld</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">grass00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230520, 12:41</td>
+<td style="text-align: center;">20230520-12:41</td>
 <td style="text-align: center;">Handheld</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">starbucks00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230520, 12:49</td>
+<td style="text-align: center;">20230520-12:49</td>
 <td style="text-align: center;">Handheld</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">starbucks01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230520, 22:24</td>
+<td style="text-align: center;">20230520-22:24</td>
 <td style="text-align: center;">Handheld</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">tunnel00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 </tbody>
 </table>
@@ -369,7 +364,7 @@ FusionPortable/
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"><div style="width:100px">Time</div></th>
+<th style="text-align: center;"><div style="width:100px">Collection Time</div></th>
 <th style="text-align: center;"><div style="width:30px">Platform</div></th>
 <th style="text-align: center;">Picture</th>
 <th style="text-align: center;">Sequence</th>
@@ -379,68 +374,68 @@ FusionPortable/
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">20230609, 12:13</td>
+<td style="text-align: center;">20230609-12:13</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">parking00</td>
 <td style="text-align: center;">xx</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230609, 12:16</td>
+<td style="text-align: center;">20230609-12:16</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">parking01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230609, 12:45</td>
+<td style="text-align: center;">20230609-12:45</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">parking02</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230609, 12:47</td>
+<td style="text-align: center;">20230609-12:47</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">parking03</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230609, 12:53</td>
+<td style="text-align: center;">20230609-12:53</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">campus00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230610, 08:09</td>
+<td style="text-align: center;">20230610-08:09</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">transition00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230613, 08:26</td>
+<td style="text-align: center;">20230613-08:26</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">transition01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230614, 17:14</td>
+<td style="text-align: center;">20230614-17:14</td>
 <td style="text-align: center;">Mini Hercules</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">campus01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 </tbody>
 </table>
@@ -448,7 +443,7 @@ FusionPortable/
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"><div style="width:100px">Time</div></th>
+<th style="text-align: center;"><div style="width:100px">Collection Time</div></th>
 <th style="text-align: center;"><div style="width:30px">Platform</div></th>
 <th style="text-align: center;">Picture</th>
 <th style="text-align: center;">Sequence</th>
@@ -458,44 +453,44 @@ FusionPortable/
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">20230731, 17:42</td>
+<td style="text-align: center;">20230731-17:42</td>
 <td style="text-align: center;">Quadruped Robot</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">transition00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230802, 15:47</td>
+<td style="text-align: center;">20230802-15:47</td>
 <td style="text-align: center;">Quadruped Robot</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">grass00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230802, 18:54</td>
+<td style="text-align: center;">20230802-18:54</td>
 <td style="text-align: center;">Quadruped Robot</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">room00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230802, 19:01</td>
+<td style="text-align: center;">20230802-19:01</td>
 <td style="text-align: center;">Quadruped Robot</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">grass01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230802, 21:50</td>
+<td style="text-align: center;">20230802-21:50</td>
 <td style="text-align: center;">Quadruped Robot</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">tunnel00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 </tbody>
 </table>
@@ -503,7 +498,7 @@ FusionPortable/
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"><div style="width:100px">Time</div></th>
+<th style="text-align: center;"><div style="width:100px">Collection Time</div></th>
 <th style="text-align: center;"><div style="width:30px">Platform</div></th>
 <th style="text-align: center;">Picture</th>
 <th style="text-align: center;">Sequence</th>
@@ -513,110 +508,110 @@ FusionPortable/
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">20230620, 16:12</td>
+<td style="text-align: center;">20230620-16:12</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">campus00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230620, 16:22</td>
+<td style="text-align: center;">20230620-16:22</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">campus01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230620, 16:34</td>
+<td style="text-align: center;">20230620-16:34</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">downhill00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230620, 17:38</td>
+<td style="text-align: center;">20230620-17:38</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">multilayer_parking00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230621, 12:51</td>
+<td style="text-align: center;">20230621-12:51</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">street00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230621, 15:36</td>
+<td style="text-align: center;">20230621-15:36</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">highway00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230621, 18:19</td>
+<td style="text-align: center;">20230621-18:19</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">highway01</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">20230621, 18:25</td>
+<td style="text-align: center;">20230621-18:25</td>
 <td style="text-align: center;">Vehicle</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
 <td style="text-align: center;">tunnel00</td>
 <td style="text-align: center;">Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
 </tr>
 </tbody>
 </table>
 <!-- #### Unpublished Sequences
 | <div style="width:100px">Time</div>  | Platform  | Picture  | Sequence  | <div style="width:100px">Features</div>  | Preview  |
 | :---:                                | :-------: | :------: | :-------: | :-------:                                | :------: |
-| 20230518, 22:07  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | corridor00 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230520, 12:31  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230526, 10:40  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | grass01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230526, 11:19  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | bridge00 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230526, 11:37  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | bridge01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230608, 07:56  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking04 | xx | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230608, 08:01  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking05 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230608, 08:15  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking06 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230608, 08:30  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking07 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230608, 09:06  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | campus02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230609, 12:42  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking08 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230614, 17:39  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | campus03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-| 20230614, 17:45  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | campus04 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230802, 16:46  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230731, 17:51  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | grass01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230731, 22:24  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230731, 22:50  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230802, 16:33  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230802, 16:46  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230802, 19:17  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | grass02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230620, 17:00  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230620, 18:58  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230620, 19:06  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230620, 19:18  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street04 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 12:21  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | downhill01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 12:42  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | downhill01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 13:29  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street05 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 16:21  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | highway02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 17:04  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | highway03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 17:25  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | highway04 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 18:09  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street06 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 18:13  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street07 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 18:39  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 18:42  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 18:43  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street08 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) |
-|20230621, 19:33  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | uphill00 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/20220215_canteen_night_preview.gif) | -->
+| 20230518, 22:07  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | corridor00 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230520, 12:31  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230526, 10:40  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | grass01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230526, 11:19  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | bridge00 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230526, 11:37  | Handheld | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | bridge01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230608, 07:56  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking04 | xx | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230608, 08:01  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking05 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230608, 08:15  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking06 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230608, 08:30  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking07 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230608, 09:06  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | campus02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230609, 12:42  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | parking08 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230614, 17:39  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | campus03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+| 20230614, 17:45  | Mini Hercules | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | campus04 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230802, 16:46  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230731, 17:51  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | grass01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230731, 22:24  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230731, 22:50  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230802, 16:33  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230802, 16:46  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | room03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230802, 19:17  | Quadruped Robot | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | grass02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230620, 17:00  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230620, 18:58  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230620, 19:06  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230620, 19:18  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street04 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 12:21  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | downhill01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 12:42  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | downhill01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 13:29  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street05 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 16:21  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | highway02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 17:04  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | highway03 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 17:25  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | highway04 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 18:09  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street06 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 18:13  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street07 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 18:39  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel01 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 18:42  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | tunnel02 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 18:43  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | street08 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) |
+|20230621, 19:33  | Vehicle | <img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/> | uphill00 | Dynamic | [preview](../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif) | -->
 
 <h4 id="some-high-resolution-gt-maps">Some High-Resolution GT Maps<a class="headerlink" href="#some-high-resolution-gt-maps" title="Permanent link">&para;</a></h4>
 <!-- | Environment | Preview |
