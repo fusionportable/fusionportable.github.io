@@ -109,7 +109,7 @@
                         
                             
 <li >
-    <a href="../../slam/fl2sam/">FL2SAM</a>
+    <a href="https://github.com/JokerJohn/PALoc">PALoc</a>
 </li>
 
                         
@@ -181,20 +181,21 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#introduction">Introduction</a></li>
-        <li class="first-level "><a href="#data-collection-platforms">Data Collection Platforms</a></li>
+        <li class="first-level active"><a href="#overview">Overview</a></li>
             <li class="second-level"><a href="#sensors">Sensors</a></li>
                 
             <li class="second-level"><a href="#various-platforms">Various Platforms</a></li>
                 
             <li class="second-level"><a href="#ground-truth-devices">Ground-Truth Devices</a></li>
                 
-            <li class="second-level"><a href="#examples-of-data-collection">Examples of Data Collection</a></li>
+            <li class="second-level"><a href="#third-view-of-data-collection">Third-View of Data Collection</a></li>
                 
-        <li class="first-level "><a href="#download">Download</a></li>
-            <li class="second-level"><a href="#data-organization">Data Organization</a></li>
+        <li class="first-level "><a href="#details">Details</a></li>
+            <li class="second-level"><a href="#organization">Organization</a></li>
                 
-            <li class="second-level"><a href="#download_1">Download</a></li>
+            <li class="second-level"><a href="#trajectories-of-sequences">Trajectories of Sequences</a></li>
+                
+            <li class="second-level"><a href="#download-sequence">Download Sequence</a></li>
                 
                 <li class="third-level"><a href="#calibration-sequences">Calibration Sequences</a></li>
                 <li class="third-level"><a href="#hanheld-sequences">Hanheld Sequences</a></li>
@@ -203,11 +204,13 @@
                 <li class="third-level"><a href="#vehicle-sequences">Vehicle Sequences</a></li>
                 <li class="third-level"><a href="#some-high-resolution-gt-maps">Some High-Resolution GT Maps</a></li>
         <li class="first-level "><a href="#experiments">Experiments</a></li>
+            <li class="second-level"><a href="#calibration">Calibration</a></li>
+                
             <li class="second-level"><a href="#localization-evaluation">Localization Evaluation</a></li>
                 
             <li class="second-level"><a href="#mapping-evaluation">Mapping Evaluation</a></li>
                 
-            <li class="second-level"><a href="#unsupervised-monocular-depth-estimation">Unsupervised Monocular Depth Estimation</a></li>
+            <li class="second-level"><a href="#monocular-depth-estimation">Monocular Depth Estimation</a></li>
                 
         <li class="first-level "><a href="#tools">Tools</a></li>
         <li class="first-level "><a href="#issues">Issues</a></li>
@@ -224,8 +227,9 @@
     <img src="../../figure/dataset/fusionportable/cover.png" width="95%" />
 </p> -->
 
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<h2 id="data-collection-platforms">Data Collection Platforms<a class="headerlink" href="#data-collection-platforms" title="Permanent link">&para;</a></h2>
+<!-- ## Introduction -->
+
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <h3 id="sensors">Sensors<a class="headerlink" href="#sensors" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Handheld Sensor</strong>: 128-beam Ouster LiDAR (OS1, 120m range)</li>
@@ -237,20 +241,20 @@
 <li><strong>Legged Robot Sensor</strong>: Built-in joint encoders, contact sensors, and IMU of the Unitree A1</li>
 </ul>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/sensor_summary.png" width="95%" />
+  <img src="../../figure/dataset/fusionportable_v2/sensor_summary.png" width="90%" />
 </p>
 
 <h3 id="various-platforms">Various Platforms<a class="headerlink" href="#various-platforms" title="Permanent link">&para;</a></h3>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/robot_platform_scene.png" width="95%" />
+  <img src="../../figure/dataset/fusionportable_v2/robot_platform_scene.png" width="90%" />
 </p>
 
 <h3 id="ground-truth-devices">Ground-Truth Devices<a class="headerlink" href="#ground-truth-devices" title="Permanent link">&para;</a></h3>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/groundtruth_device.png" width="95%" />
+  <img src="../../figure/dataset/fusionportable_v2/groundtruth_device.png" width="90%" />
 </p>
 
-<h3 id="examples-of-data-collection">Examples of Data Collection<a class="headerlink" href="#examples-of-data-collection" title="Permanent link">&para;</a></h3>
+<h3 id="third-view-of-data-collection">Third-View of Data Collection<a class="headerlink" href="#third-view-of-data-collection" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -272,11 +276,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
-<h3 id="data-organization">Data Organization<a class="headerlink" href="#data-organization" title="Permanent link">&para;</a></h3>
+<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
+<h3 id="organization">Organization<a class="headerlink" href="#organization" title="Permanent link">&para;</a></h3>
 <pre>
 <p align="left">
-  <img src="../../figure/dataset/fusionportable_v2/data_organization.png" width="70%" />
+  <img src="../../figure/dataset/fusionportable_v2/data_organization.png" width="50%" />
 </p>
 </pre>
 
@@ -310,12 +314,21 @@ FusionPortable/
   3. <code>&ltplatform_env&gt.7z</code> compressed rosbag.<br>
 </div>
 
-<h3 id="download_1">Download<a class="headerlink" href="#download_1" title="Permanent link">&para;</a></h3>
+<h3 id="trajectories-of-sequences">Trajectories of Sequences<a class="headerlink" href="#trajectories-of-sequences" title="Permanent link">&para;</a></h3>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_ugv.png" width="90%" />
+</p>
+
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_vehicle.png" width="90%" />
+</p>
+
+<h3 id="download-sequence">Download Sequence<a class="headerlink" href="#download-sequence" title="Permanent link">&para;</a></h3>
 <div class="bs-callout bs-callout-info">
   <h4>Please click these below links to download:</h4>
   1. <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Link to Google Drive</a>
   <br>
-  2. <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Link to Baidu Pan</a>
+  2. <a href="">Link to Baidu Pan (unavailabel now) </a>
   <br>
   <p>Note: extract compressed ROSBag in the terminal: <code>7z l &ltplatform_env&gt.7z</code></p>
 </div>
@@ -396,12 +409,13 @@ Download the dataset by clicking the button below, and log
 <a href="https://filebrowser.ram-lab.com"><button type="button" class="btn btn-success"><i class="fas fa-cloud-download-alt fa-2x"></i><span style="font-size:15px;"> Download</span></button></a> -->
 
 <h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
+<h3 id="calibration">Calibration<a class="headerlink" href="#calibration" title="Permanent link">&para;</a></h3>
 <h3 id="localization-evaluation">Localization Evaluation<a class="headerlink" href="#localization-evaluation" title="Permanent link">&para;</a></h3>
 <h3 id="mapping-evaluation">Mapping Evaluation<a class="headerlink" href="#mapping-evaluation" title="Permanent link">&para;</a></h3>
-<h3 id="unsupervised-monocular-depth-estimation">Unsupervised Monocular Depth Estimation<a class="headerlink" href="#unsupervised-monocular-depth-estimation" title="Permanent link">&para;</a></h3>
+<h3 id="monocular-depth-estimation">Monocular Depth Estimation<a class="headerlink" href="#monocular-depth-estimation" title="Permanent link">&para;</a></h3>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
-<p>The dataset tool can be used by clicking the button below</p>
-<p><a href="https://github.com/HKUSTGZ-IADC/iadc_dataset_tools"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Dataset Tool</button></a></p>
+<p>The development tool can be used by clicking the button below</p>
+<p><a href="https://github.com/fusionportable/fusionportable_dataset_tools"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Development Tools</button></a></p>
 <!-- ## Evaluation
 ### Evalaution of Trajectories
 
@@ -422,15 +436,18 @@ Download the dataset by clicking the button below, and log
 
 <h2 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
 <p>If you have any issues with the theme, please report them on the repository:</p>
-<p><a href="https://github.com/HKUSTGZ-IADC/iadc_dataset_tools/issues"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Report Issues</button></a></p>
+<p><a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Report Issues</button></a></p>
 <h2 id="publications">Publications<a class="headerlink" href="#publications" title="Permanent link">&para;</a></h2>
-<!-- 1. **FusionPortable: A Multi-Sensor Campus-Scene Dataset for Evaluation of Localization and Mapping Accuracy on Diverse Platforms**<br/>
-<span style="color: gray">Jianhao Jiao\*, Hexiang Wei\*, Tianshuai Hu\*, Xiangcheng Hu\*, Yilong Zhu, Zhijian He, Jin Wu, Jingwen Yu, Xupeng Xie, Huaiyang Huang, Ruoyu Geng, Lujia Wang, Ming Liu</span><br/>
-*Presented at IROS 2022*<br/>
-[[paper]](../../files/jiao2022fusionportable.pdf)
-[[bibtex]](bib/jiao2022fusionportable.bib) -->
+<ol>
+<li><strong>FusionPortableV2: </strong><br/>
+<span style="color: gray">Hexiang Wei*, Jianhao Jiao*, Xiangcheng Hu, Jingwen Yu, Xupeng Xie, Jin Wu, Yilong Zhu, Yuxuan Liu, Lujia Wang, Ming Liu</span><br/>
+<em>Under Review</em><br/>
+<a href="../../files/jiao2022fusionportable.pdf">[Arxiv]</a></li>
+</ol>
+<!-- [[bibtex]](bib/jiao2022fusionportable.bib) -->
 <!-- [[video]]() -->
-<!-- [[page]](https://ram-lab.com/file/site/multi-sensor-dataset) -->
+<!-- [[page]](https://ram-lab.com/file/site/multi-sensor-dataset)
+
 
 <!-- [preview](../../figure/dataset/fusionportable_v2/preview/20221202_hkustgz_campus_day_preview.gif) --></div>
         
