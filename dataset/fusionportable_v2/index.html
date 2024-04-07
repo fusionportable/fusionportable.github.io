@@ -241,17 +241,17 @@
 <li><strong>Legged Robot Sensor</strong>: Built-in joint encoders, contact sensors, and IMU of the Unitree A1</li>
 </ul>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/sensor_summary.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/sensor_summary.png" width="80%" />
 </p>
 
 <h3 id="various-platforms">Various Platforms<a class="headerlink" href="#various-platforms" title="Permanent link">&para;</a></h3>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/robot_platform_scene.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/robot_platform_scene.png" width="80%" />
 </p>
 
 <h3 id="ground-truth-devices">Ground-Truth Devices<a class="headerlink" href="#ground-truth-devices" title="Permanent link">&para;</a></h3>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/groundtruth_device.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/groundtruth_device.png" width="80%" />
 </p>
 
 <h3 id="third-view-of-data-collection">Third-View of Data Collection<a class="headerlink" href="#third-view-of-data-collection" title="Permanent link">&para;</a></h3>
@@ -265,14 +265,29 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Garden</td>
-<td style="text-align: center;">Handheld</td>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/data_collection-garden.gif" width="40%" /></td>
+<td style="text-align: center;"><div style="width:150px">Escalator</div></td>
+<td style="text-align: center;"><div style="width:100px">Handheld</div></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_handheld_escalator_00.gif" width="30%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Motion Capture Room</td>
-<td style="text-align: center;">Quadrupled Robot</td>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/data_collection-MCR_normal_00.gif" width="40%" /></td>
+<td style="text-align: center;">Corridor</td>
+<td style="text-align: center;">Handheld</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_handheld_corridor_02.gif" width="30%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Underground Parking Lot</td>
+<td style="text-align: center;">Legged Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_legged_underground_00.gif" width="30%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Campus</td>
+<td style="text-align: center;">UGV</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_ugv_campus_02.gif" width="30%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Outdoor Parking Lot</td>
+<td style="text-align: center;">UGV</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_ugv_parking_01.gif" width="30%" /></td>
 </tr>
 </tbody>
 </table>
@@ -309,26 +324,33 @@ FusionPortable/
 
 <div class="bs-callout bs-callout-default">
   <h4>Note:</h4>
-  1. <code>&ltframe_id&gt.yaml</code> store intrinsics and extrinsics of a specific sensor.<br>
-  2. <code>&ltplatform_env&gt.bag</code> rosbag.<br>
-  3. <code>&ltplatform_env&gt.7z</code> compressed rosbag.<br>
+  1. <code>&ltframe_id&gt.yaml</code> store intrinsics and extrinsics of a specific sensor<br>
+  2. <code>&ltmap_env&gt.pcd</code> ground-truth map<br>
+  3. <code>&ltplatform_env&gt.bag</code> rosbag<br>
+  4. <code>&ltplatform_env&gt.7z</code> compressed rosbag<br>
 </div>
 
 <h3 id="trajectories-of-sequences">Trajectories of Sequences<a class="headerlink" href="#trajectories-of-sequences" title="Permanent link">&para;</a></h3>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_ugv.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_ugv.png" width="80%" />
 </p>
 
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_vehicle.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_vehicle.png" width="80%" />
 </p>
 
 <h3 id="download-sequence">Download Sequence<a class="headerlink" href="#download-sequence" title="Permanent link">&para;</a></h3>
 <div class="bs-callout bs-callout-info">
   <h4>Please click these below links to download:</h4>
-  1. <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Link to Google Drive</a>
+  <b>Option 1 (recommend, long-term maintenance):</b> 
+  <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Google Drive</a> <br>
+  Or copy the linke<br>
+  <code>https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing</code>
   <br>
-  2. <a href="">Link to Baidu Pan (unavailabel now) </a>
+  <br>
+  <b>Option 2 (unavailable now):</b> 
+  <a href="">Link to Baidu Pan (unavailabel now) </a>
+  <br>
   <br>
   <p>Note: extract compressed ROSBag in the terminal: <code>7z l &ltplatform_env&gt.7z</code></p>
 </div>
@@ -338,68 +360,231 @@ FusionPortable/
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Picture</th>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
 <th style="text-align: center;">Sequence</th>
-<th style="text-align: center;"><div style="width:100px">Collection Time</div></th>
 <th style="text-align: center;"><div style="width:150px">Features</div></th>
 <th style="text-align: center;">Preview</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_grass.jpeg" alt="" width="30%"/></td>
 <td style="text-align: center;">handheld_grass00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;">Textureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1af3WKvxJlAuJZOZybrnt-Lrf0loghcgr/view?usp=drive_link">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_room.jpg" alt="" width="30%"/></td>
 <td style="text-align: center;">handheld_room00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;">Dynmaic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1x_7Pm_0iIQmJvYLfNyyw2qj5bDpdkx3l/view?usp=drive_link">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_room.jpg" alt="" width="30%"/></td>
 <td style="text-align: center;">handheld_room01</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;">Dynmaic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1VkkuJOlzYhr4Xgah61jgKKdzrwAH_6gz/view?usp=drive_link">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_escalator.png" alt="" width="30%"/></td>
 <td style="text-align: center;">handheld_escalator00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;">Non-inertial</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1PF30fbp7m7ngppLOjNSOHkQgkym083u1/view?usp=drive_link">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_escalator.png" alt="" width="30%"/></td>
 <td style="text-align: center;">handheld_escalator01</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;">Non-inertial</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1Iv7nSSXnYKNSJm6tHKS_c1Zb4WK6XZ79/view?usp=drive_link">preview</a></td>
 </tr>
 <tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_underground_parking_0.jpeg" alt="" width="30%"/></td>
 <td style="text-align: center;">handheld_underground00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1gNN-wv9bSzfI9yKO7iMUh3VzzpYPvpyf/view?usp=drive_link">preview</a></td>
 </tr>
 </tbody>
 </table>
 <h4 id="legged-robot-sequences">Legged Robot Sequences<a class="headerlink" href="#legged-robot-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;"><div style="width:150px">Features</div></th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_grass.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_grass00</td>
+<td style="text-align: center;">Structureless, Deformable</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1gN-k10QF956h7JIu4t-SPc7w7L0RmQRL/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_grass.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_grass01</td>
+<td style="text-align: center;">Structureless, Deformable</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1LuZ6QGSRFYzD6nOrHRQ-1QmJFH9ZaoEC/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_room_calib.png" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_room00</td>
+<td style="text-align: center;">Dynamic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1Drm-sdx-XYmyXVrUISaYUNFHfKV3cfdD/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_transition.png" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_transition00</td>
+<td style="text-align: center;">Illumination, GNSS-deined</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1HseWjXIqQ4kBcT89nT9tEQAmq08rwV_f/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_underground_parking_0.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_underground00</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1bzt-Tvmqw4O_wSEHritoirrt-Jf4K7Yt/view?usp=drive_link">preview</a></td>
+</tr>
+</tbody>
+</table>
 <h4 id="ugv-sequences">UGV Sequences<a class="headerlink" href="#ugv-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;"><div style="width:150px">Features</div></th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking00</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1xh0rhnF1l0X5nmv4ZrgWOPVzRY88grVn/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking01</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1m7c3zZJrx-TVGjLZj3DRmBM_SYOp6DPA/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking02</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1Q21oJXbEVj6Gvzn_BNUYVMKajqvH4DSw/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking03</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/13tidecZlLXe3X8usp1rIGQaKcji-PuSO/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_campus_0.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_campus00</td>
+<td style="text-align: center;">Large-Scale</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1RPjBIpL4lKdsegJ05yHVMHMY8_CKa8Pw/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_campus_0.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_campus01</td>
+<td style="text-align: center;">Fast Motion</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1KtRvM3Qtfvb4-HR9uIk6fG39X4eaQQS5/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_transition.png" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_transition00</td>
+<td style="text-align: center;">GNSS-Denied</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1n7HsdFzsKp6aLf7RLfB13CXsEjsa6Zew/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_transition.png" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_transition01</td>
+<td style="text-align: center;">GNSS-Denied</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1yOYLITNHO4OyFF9blMR_Kzjw5u61lltv/view?usp=drive_link">preview</a></td>
+</tr>
+</tbody>
+</table>
 <h4 id="vehicle-sequences">Vehicle Sequences<a class="headerlink" href="#vehicle-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;"><div style="width:150px">Features</div></th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkust_campus.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_campus00</td>
+<td style="text-align: center;">Large-Scale</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/11kpl7NsCtFKqU2FKcZ2yZp19B-1_lPK1/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkust_campus.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_campus01</td>
+<td style="text-align: center;">Large-Scale</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1IVexm4lU6WHh0RcV1fenxHLIFZLH5D6s/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_street_01.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_street00</td>
+<td style="text-align: center;">Large-Scale, Dynmaic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1-zhWb7zBZbIlU7CTNn-9i9thkMUHV_gC/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_tunnel.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_tunnel00</td>
+<td style="text-align: center;">Low Texture and Structure</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1JDSUUjvBJxKdPz4jeYJyk9p0XTqs43ab/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_downhill.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_downhill00</td>
+<td style="text-align: center;">Illumination</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1xj1fEuXPhijIGx_kdLBwy1x_QSVrur9C/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_highway.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_highway00</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1VSuh7RH3ezWdlfpfN4AwEddp2JRm_sPj/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_highway.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_highway01</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1dN8F_91nItL32hPxsD2pz7WoGom5NsV8/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_multilayer_parking.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_multilayer00</td>
+<td style="text-align: center;">Perceptual Aliasing</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1JMWfb8ZqkuAnFdDJQKbmUJmj6dboCTYE/view?usp=drive_link">preview</a></td>
+</tr>
+</tbody>
+</table>
 <h4 id="some-high-resolution-gt-maps">Some High-Resolution GT Maps<a class="headerlink" href="#some-high-resolution-gt-maps" title="Permanent link">&para;</a></h4>
-<!-- | Environment | Preview |
-| :---------- | :------ |
-| Garden      | <img src="../../figure/dataset/fusionportable/gt_map/gtmap_garden.gif" alt="GT Map_Garden" width="60%" />    |
-| Escalator   | <img src="../../figure/dataset/fusionportable/gt_map/gtmap_escalator.gif" alt="GT Map_Escalator" width="60%" /> |
-| Building    | <img src="../../figure/dataset/fusionportable/gt_map/gtmap_building.gif" alt="GT Map_Building" width="60%" />  | -->
-
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Environment</th>
+<th style="text-align: left;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">UGV Campus</td>
+<td style="text-align: left;"><img src="../../figure/dataset/fusionportable_v2/scene_image/gtmap_campus.gif" alt="GT Map" width="50%" /></td>
+</tr>
+</tbody>
+</table>
 <!-- ### Download
 Download the dataset by clicking the button below, and log
 
@@ -410,9 +595,34 @@ Download the dataset by clicking the button below, and log
 
 <h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
 <h3 id="calibration">Calibration<a class="headerlink" href="#calibration" title="Permanent link">&para;</a></h3>
+<p>Projected Point Cloud with Camera-LiDAR Calibration (<a href="https://github.com/HKUSTGZ-IADC/LCECalib">LCE-Calib</a>)</p>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/exp_calibration/vehicle_campus00_kitti360_vehicle_frame_cam00_proj.gif" width="40%" />
+  <img src="../../figure/dataset/fusionportable_v2/exp_calibration/ugv_campus00_kitti360_frame_cam00_proj.gif" width="40%" />
+</p>
+
 <h3 id="localization-evaluation">Localization Evaluation<a class="headerlink" href="#localization-evaluation" title="Permanent link">&para;</a></h3>
+<p><b>Running FAST-LIO2</b>: handheld_room00, legged_grass00, ugv_campus00, vehicle_highway00</p>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/exp_localization/handheld_room00_fastlio2_result_x5.gif" width="40%" />
+  <img src="../../figure/dataset/fusionportable_v2/exp_localization/legged_grass00_fastlio2_result_x5.gif" width="40%" />
+  <img src="../../figure/dataset/fusionportable_v2/exp_localization/ugv_campus00_fastlio2_result_x5.gif" width="40%" />
+  <img src="../../figure/dataset/fusionportable_v2/exp_localization/vehicle_highway00_fastlio2_result_x5.gif" width="40%" />
+</p>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/exp_localization/trajectory_evaluation.png" width="85%" />
+</p>
+
 <h3 id="mapping-evaluation">Mapping Evaluation<a class="headerlink" href="#mapping-evaluation" title="Permanent link">&para;</a></h3>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/exp_mapping/map_evaluation.png" width="85%" />
+</p>
+
 <h3 id="monocular-depth-estimation">Monocular Depth Estimation<a class="headerlink" href="#monocular-depth-estimation" title="Permanent link">&para;</a></h3>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/exp_depth_estimation/depth_estimation.png" width="85%" />
+</p>
+
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <p>The development tool can be used by clicking the button below</p>
 <p><a href="https://github.com/fusionportable/fusionportable_dataset_tools"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Development Tools</button></a></p>
