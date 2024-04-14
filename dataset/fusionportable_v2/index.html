@@ -216,7 +216,7 @@
             <li class="second-level"><a href="#navigation-demo-in-the-underground-parking-lot">Navigation Demo in the Underground Parking Lot</a></li>
                 
         <li class="first-level "><a href="#tools">Tools</a></li>
-        <li class="first-level "><a href="#issues">Issues</a></li>
+        <li class="first-level "><a href="#known-issues">Known Issues</a></li>
         <li class="first-level "><a href="#related-works">Related Works</a></li>
         <li class="first-level "><a href="#publications">Publications</a></li>
         <li class="first-level "><a href="#contact">Contact</a></li>
@@ -237,8 +237,10 @@
 
 <h2 id="news">News<a class="headerlink" href="#news" title="Permanent link">&para;</a></h2>
 <ul>
+<li>(20240414) All sequences, ground-truth trajectories, and ground-truth maps have been publicly released. If you find issues of GT trajectories and maps, please contact us or report <a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues">here</a>.</li>
+<li>(20240413) A small simulated navigation environment is provied.</li>
 <li>(20240408) The development tool has been initially released.</li>
-<li>(20240407) Data of FusionPortable can be downloaed from <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Google Drive</a>. </li>
+<li>(20240407) Data can be downloaed from <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Google Drive</a>. </li>
 </ul>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <h3 id="sensors">Sensors<a class="headerlink" href="#sensors" title="Permanent link">&para;</a></h3>
@@ -642,7 +644,7 @@ Download the dataset by clicking the button below, and log
 </p>
 
 <h3 id="navigation-demo-in-the-underground-parking-lot">Navigation Demo in the Underground Parking Lot<a class="headerlink" href="#navigation-demo-in-the-underground-parking-lot" title="Permanent link">&para;</a></h3>
-<p>Utilize the open-source <a href="https://www.cmu-exploration.com">CMU exploration package</a></p>
+<p>Importing the <a href="https://drive.google.com/drive/folders/1rXRyUXusJkWGaFxDTh3O6Lw07ivqai9w?usp=sharing">GT map</a> as the simulated environment (in Gazebo), we can employ the open-source <a href="https://www.cmu-exploration.com">CMU exploration package</a> to achieve the navigation experiment.</p>
 <p align="center">
   <img src="../../figure/dataset/fusionportable_v2/exp_navigation/navigation_underground_tunnel.gif" width="85%" />
 </p>
@@ -668,8 +670,12 @@ Download the dataset by clicking the button below, and log
 | IMU + LiDAR + Monocular Vision | R3LIVE      | xxx  |
 |                                |             |      | -->
 
-<h2 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
-<p>If you have any issues with the theme, please report them on the repository:</p>
+<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<p>We have listed some knowns issues in our dataset:</p>
+<ol>
+<li>Some dynamic objects exist and not removed from the ground-truth maps. If you want the ``clear'' map for experiments, I recommend you to try the maps in <a href="https://fusionportable.github.io/dataset/fusionportable/">FusionPortable</a> first.</li>
+</ol>
+<p>If you have any other issues, please report them on the repository:</p>
 <p><a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Report Issues</button></a></p>
 <h2 id="related-works">Related Works<a class="headerlink" href="#related-works" title="Permanent link">&para;</a></h2>
 <p>FusionPortable-release works were used in the following papers.
