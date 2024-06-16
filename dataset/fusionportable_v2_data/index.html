@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>FusionPortableV2-data - FusionPortable Research Dashboard</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin'
+        rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+    <script src="../../js/database.js"></script>
+
+    
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+    
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">FusionPortable Research Dashboard</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calibration <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../calibration/pbacalib/">PBACalib</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../calibration/lcecalib/">LCECalib</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Localization & Mapping <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="https://github.com/JokerJohn/PALoc">PALoc</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="https://gogojjh.github.io/projects/2024_semantic_mapping">SemanticMapping</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Perception <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="https://github.com/Owen-Liuyuxuan/FSNet">FSNet</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datasets <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../fusionportable/">FusionPortable</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../fusionportable_v2/">FusionPortableV2</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">FusionPortableV2-data</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../fusionportable_v2_exp/">FusionPortableV2-exp</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../fusionportable_v2/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../fusionportable_v2_exp/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#organization">Organization</a></li>
+        <li class="first-level "><a href="#trajectories-of-sequences">Trajectories of Sequences</a></li>
+        <li class="first-level "><a href="#download-sequence">Download Sequence</a></li>
+            <li class="second-level"><a href="#calibration-files-cooresponding-to-sequences">Calibration Files Cooresponding to Sequences</a></li>
+                
+        <li class="first-level "><a href="#preview-of-sequences">Preview of Sequences</a></li>
+            <li class="second-level"><a href="#calibration-sequences">Calibration Sequences</a></li>
+                
+            <li class="second-level"><a href="#hanheld-sequences">Hanheld Sequences</a></li>
+                
+            <li class="second-level"><a href="#legged-robot-sequences">Legged Robot Sequences</a></li>
+                
+            <li class="second-level"><a href="#ugv-sequences">UGV Sequences</a></li>
+                
+            <li class="second-level"><a href="#vehicle-sequences">Vehicle Sequences</a></li>
+                
+            <li class="second-level"><a href="#high-resolution-gt-maps">High-Resolution GT Maps</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1>FusionPortable V2-Dataset Details</h1>
+
+<h3 id="organization">Organization<a class="headerlink" href="#organization" title="Permanent link">&para;</a></h3>
+<pre>
+<p align="left">
+  <img src="../../figure/dataset/fusionportable_v2/data_organization.png" width="50%" />
+</p>
+</pre>
+
+<!-- <pre><code class="shell">
+FusionPortable/
+├── calibration_files/               // Intrinsics & extrinsics of sensors
+  └── 20230426_calib/
+    └── &ltsensor_name&gt.yaml           // e.g., ouster00.yaml, frame_cam00.yaml 
+├── groundtruth/
+  └── map/                           // Ground-truth maps
+    └── &ltdate_env&gt/
+      ├── scan/
+        └── &ltscan_id&gt.pcd            // Individual scan
+      ├── merged_scan.pcd            // Merged scan (resolution: 1cm)
+      └── transformation.yaml        // Transformation of each scan
+  └── traj/                          // Ground-truth trajectories 
+    └── &ltdate_env&gt.txt               // e.g., 20220215_canteen_night.txt
+└── sensor_data/
+  └── &ltplatform&gt/                    // Platforms, e.g., handheld
+    └── &ltdate_env&gt                   // e.g., 20220215_canteen_night
+      ├── &ltdate_env&gt.bag             
+      └── &ltdate_env&gt.bag.7z  
+</code></pre> -->
+<!-- ├── data/
+└── data_ref_kitti/ -->
+
+<div class="bs-callout bs-callout-default">
+  <h4>Note:</h4>
+  1. <code>&ltframe_id&gt.yaml</code> store intrinsics and extrinsics of a specific sensor<br>
+  2. <code>&ltmap_env&gt.pcd</code> ground-truth map<br>
+  3. <code>&ltplatform_env&gt.bag</code> rosbag<br>
+  4. <code>&ltplatform_env&gt.7z</code> compressed rosbag<br>
+</div>
+
+<h3 id="trajectories-of-sequences">Trajectories of Sequences<a class="headerlink" href="#trajectories-of-sequences" title="Permanent link">&para;</a></h3>
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_ugv.png" width="80%" />
+</p>
+
+<p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_vehicle.png" width="80%" />
+</p>
+
+<h3 id="download-sequence">Download Sequence<a class="headerlink" href="#download-sequence" title="Permanent link">&para;</a></h3>
+<div class="bs-callout bs-callout-info">
+  <h4>Please click these below links to download:</h4>
+  <b>Calibration files (recommend, long-term maintenance)</b>: 
+  <a href="https://github.com/fusionportable/calibration_files">Github</a> <br>
+  Or copy this link<br>
+  <code>https://github.com/fusionportable/calibration_files</code> 
+  <br>
+  <br>
+  <b>Data: Option 1 (recommend, long-term maintenance):</b> 
+  <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Google Drive</a> <br>
+  Or copy this link<br>
+  <code>https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing</code>
+  <br>
+  <br>
+  <b>Data: Option 2 (not for long-term maintenance):</b>
+  <a href="https://pan.baidu.com/s/1lZwK-TNrCyoyC9oWEs8jUg?pwd=byj8">Baidu Wang Pan</a> with the code <b>byj8</b> <br>
+  Or copy this link<br>
+  <code>https://pan.baidu.com/s/1lZwK-TNrCyoyC9oWEs8jUg?pwd=byj8</code>
+  <br>
+  <br>
+  <p>After downloading, please extract compressed ROSBag in the terminal: <code>7z x &ltplatform_env&gt.7z</code></p>
+</div>
+
+<h4 id="calibration-files-cooresponding-to-sequences">Calibration Files Cooresponding to Sequences<a class="headerlink" href="#calibration-files-cooresponding-to-sequences" title="Permanent link">&para;</a></h4>
+<p><b>Please download the correct calibration files for the sequences.</b></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Calibration Files</th>
+<th style="text-align: center;">Sequences</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://github.com/fusionportable/calibration_files/tree/master/20230403_calib/calib">20230403_calib</a></td>
+<td style="text-align: center;">Handheld Sequences</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="https://github.com/fusionportable/calibration_files/tree/master/20230426_calib">20230426_calib</a></td>
+<td style="text-align: center;">UGV Seuqneces</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="https://github.com/fusionportable/calibration_files/tree/master/20230618_calib">20230618_calib</a></td>
+<td style="text-align: center;">Vehicle Seuqneces</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="https://github.com/fusionportable/calibration_files/tree/master/20230912_calib">20230912_calib</a></td>
+<td style="text-align: center;">Legged Robot Seuqneces</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preview-of-sequences">Preview of Sequences<a class="headerlink" href="#preview-of-sequences" title="Permanent link">&para;</a></h3>
+<h4 id="calibration-sequences">Calibration Sequences<a class="headerlink" href="#calibration-sequences" title="Permanent link">&para;</a></h4>
+<h4 id="hanheld-sequences">Hanheld Sequences<a class="headerlink" href="#hanheld-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;"><div style="width:150px">Features</div></th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_grass.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">handheld_grass00</td>
+<td style="text-align: center;">Textureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1af3WKvxJlAuJZOZybrnt-Lrf0loghcgr/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_room.jpg" alt="" width="30%"/></td>
+<td style="text-align: center;">handheld_room00</td>
+<td style="text-align: center;">Dynmaic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1x_7Pm_0iIQmJvYLfNyyw2qj5bDpdkx3l/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_room.jpg" alt="" width="30%"/></td>
+<td style="text-align: center;">handheld_room01</td>
+<td style="text-align: center;">Dynmaic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1VkkuJOlzYhr4Xgah61jgKKdzrwAH_6gz/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_escalator.png" alt="" width="30%"/></td>
+<td style="text-align: center;">handheld_escalator00</td>
+<td style="text-align: center;">Non-inertial</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1PF30fbp7m7ngppLOjNSOHkQgkym083u1/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_escalator.png" alt="" width="30%"/></td>
+<td style="text-align: center;">handheld_escalator01</td>
+<td style="text-align: center;">Non-inertial</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1Iv7nSSXnYKNSJm6tHKS_c1Zb4WK6XZ79/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_underground_parking_0.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">handheld_underground00</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1gNN-wv9bSzfI9yKO7iMUh3VzzpYPvpyf/view?usp=drive_link">preview</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="legged-robot-sequences">Legged Robot Sequences<a class="headerlink" href="#legged-robot-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;"><div style="width:150px">Features</div></th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_grass.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_grass00</td>
+<td style="text-align: center;">Structureless, Deformable</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1gN-k10QF956h7JIu4t-SPc7w7L0RmQRL/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_grass.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_grass01</td>
+<td style="text-align: center;">Structureless, Deformable</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1LuZ6QGSRFYzD6nOrHRQ-1QmJFH9ZaoEC/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_room_calib.png" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_room00</td>
+<td style="text-align: center;">Dynamic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1Drm-sdx-XYmyXVrUISaYUNFHfKV3cfdD/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_transition.png" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_transition00</td>
+<td style="text-align: center;">Illumination, GNSS-deined</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1HseWjXIqQ4kBcT89nT9tEQAmq08rwV_f/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_underground_parking_0.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">legged_underground00</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1bzt-Tvmqw4O_wSEHritoirrt-Jf4K7Yt/view?usp=drive_link">preview</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="ugv-sequences">UGV Sequences<a class="headerlink" href="#ugv-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;"><div style="width:150px">Features</div></th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking00</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1xh0rhnF1l0X5nmv4ZrgWOPVzRY88grVn/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking01</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1m7c3zZJrx-TVGjLZj3DRmBM_SYOp6DPA/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking02</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1Q21oJXbEVj6Gvzn_BNUYVMKajqvH4DSw/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_parking_00.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_parking03</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/13tidecZlLXe3X8usp1rIGQaKcji-PuSO/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_campus_0.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_campus00</td>
+<td style="text-align: center;">Large-Scale</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1RPjBIpL4lKdsegJ05yHVMHMY8_CKa8Pw/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_campus_0.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_campus01</td>
+<td style="text-align: center;">Fast Motion</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1KtRvM3Qtfvb4-HR9uIk6fG39X4eaQQS5/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_transition.png" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_transition00</td>
+<td style="text-align: center;">GNSS-Denied</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1n7HsdFzsKp6aLf7RLfB13CXsEjsa6Zew/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkustgz_transition.png" alt="" width="30%"/></td>
+<td style="text-align: center;">ugv_transition01</td>
+<td style="text-align: center;">GNSS-Denied</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1yOYLITNHO4OyFF9blMR_Kzjw5u61lltv/view?usp=drive_link">preview</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="vehicle-sequences">Vehicle Sequences<a class="headerlink" href="#vehicle-sequences" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><div style="width:150px">Picture</div></th>
+<th style="text-align: center;">Sequence</th>
+<th style="text-align: center;"><div style="width:150px">Features</div></th>
+<th style="text-align: center;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkust_campus.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_campus00</td>
+<td style="text-align: center;">Large-Scale</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/11kpl7NsCtFKqU2FKcZ2yZp19B-1_lPK1/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hkust_campus.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_campus01</td>
+<td style="text-align: center;">Large-Scale</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1IVexm4lU6WHh0RcV1fenxHLIFZLH5D6s/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_street_01.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_street00</td>
+<td style="text-align: center;">Large-Scale, Dynmaic</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1-zhWb7zBZbIlU7CTNn-9i9thkMUHV_gC/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_tunnel.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_tunnel00</td>
+<td style="text-align: center;">Low Texture and Structure</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1JDSUUjvBJxKdPz4jeYJyk9p0XTqs43ab/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_downhill.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_downhill00</td>
+<td style="text-align: center;">Illumination</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1xj1fEuXPhijIGx_kdLBwy1x_QSVrur9C/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_highway.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_highway00</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1VSuh7RH3ezWdlfpfN4AwEddp2JRm_sPj/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_highway.png" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_highway01</td>
+<td style="text-align: center;">Structureless</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1dN8F_91nItL32hPxsD2pz7WoGom5NsV8/view?usp=drive_link">preview</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/scene_image/scene_image_hongkong_multilayer_parking.jpeg" alt="" width="30%"/></td>
+<td style="text-align: center;">vehicle_multilayer00</td>
+<td style="text-align: center;">Perceptual Aliasing</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1JMWfb8ZqkuAnFdDJQKbmUJmj6dboCTYE/view?usp=drive_link">preview</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="high-resolution-gt-maps">High-Resolution GT Maps<a class="headerlink" href="#high-resolution-gt-maps" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Environment</th>
+<th style="text-align: left;">Area</th>
+<th style="text-align: left;">Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">UGV Campus</td>
+<td style="text-align: left;">0.36km^2</td>
+<td style="text-align: left;"><img src="../../figure/dataset/fusionportable_v2/scene_image/gtmap_campus.gif" alt="GT Map" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: left;">Underground Parking</td>
+<td style="text-align: left;">0.037km^2</td>
+<td style="text-align: left;"><img src="../../figure/dataset/fusionportable_v2/scene_image/gtmap_underground.gif" alt="GT Map" width="50%" /></td>
+</tr>
+</tbody>
+</table>
+<!-- ### Download
+Download the dataset by clicking the button below, and log
+
+* Username: fusionportable
+* Password: iadchkust
+
+<a href="https://filebrowser.ram-lab.com"><button type="button" class="btn btn-success"><i class="fas fa-cloud-download-alt fa-2x"></i><span style="font-size:15px;"> Download</span></button></a> --></div>
+        
+        
+    </div>
+
+    
+    <footer class="col-md-12 text-center">
+        
+        
+        <hr>
+        <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+        
+
+        
+        
+    </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script> -->
+
+    
+    <script
+        src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

@@ -104,12 +104,18 @@
                 
                 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SLAM <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Localization & Mapping <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
     <a href="https://github.com/JokerJohn/PALoc">PALoc</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="https://gogojjh.github.io/projects/2024_semantic_mapping">SemanticMapping</a>
 </li>
 
                         
@@ -149,6 +155,18 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../fusionportable_v2_data/">FusionPortableV2-data</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../fusionportable_v2_exp/">FusionPortableV2-exp</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -166,8 +184,8 @@
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../fusionportable_v2_data/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -181,47 +199,32 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#overview">Overview</a></li>
+        <li class="first-level active"><a href="#news">News</a></li>
+        <li class="first-level "><a href="#overview">Overview</a></li>
             <li class="second-level"><a href="#sensors">Sensors</a></li>
                 
-            <li class="second-level"><a href="#various-platforms">Various Platforms</a></li>
+                <li class="third-level"><a href="#definitions-of-coordinate-frame">Definitions of Coordinate Frame</a></li>
+                <li class="third-level"><a href="#explanation-of-ros-topic-and-message">Explanation of ROS Topic and Message</a></li>
+            <li class="second-level"><a href="#various-platforms-and-scenarios">Various Platforms and Scenarios</a></li>
                 
             <li class="second-level"><a href="#ground-truth-devices">Ground-Truth Devices</a></li>
                 
             <li class="second-level"><a href="#third-view-of-data-collection">Third-View of Data Collection</a></li>
                 
-        <li class="first-level "><a href="#details">Details</a></li>
-            <li class="second-level"><a href="#organization">Organization</a></li>
-                
-            <li class="second-level"><a href="#trajectories-of-sequences">Trajectories of Sequences</a></li>
-                
-            <li class="second-level"><a href="#download-sequence">Download Sequence</a></li>
-                
-                <li class="third-level"><a href="#calibration-sequences">Calibration Sequences</a></li>
-                <li class="third-level"><a href="#hanheld-sequences">Hanheld Sequences</a></li>
-                <li class="third-level"><a href="#legged-robot-sequences">Legged Robot Sequences</a></li>
-                <li class="third-level"><a href="#ugv-sequences">UGV Sequences</a></li>
-                <li class="third-level"><a href="#vehicle-sequences">Vehicle Sequences</a></li>
-                <li class="third-level"><a href="#some-high-resolution-gt-maps">Some High-Resolution GT Maps</a></li>
+        <li class="first-level "><a href="#dataset-details-and-download">Dataset Details and Download</a></li>
         <li class="first-level "><a href="#experiments">Experiments</a></li>
-            <li class="second-level"><a href="#calibration">Calibration</a></li>
-                
-            <li class="second-level"><a href="#localization-evaluation">Localization Evaluation</a></li>
-                
-            <li class="second-level"><a href="#mapping-evaluation">Mapping Evaluation</a></li>
-                
-            <li class="second-level"><a href="#monocular-depth-estimation">Monocular Depth Estimation</a></li>
-                
         <li class="first-level "><a href="#tools">Tools</a></li>
-        <li class="first-level "><a href="#issues">Issues</a></li>
+        <li class="first-level "><a href="#known-issues">Known Issues</a></li>
+        <li class="first-level "><a href="#related-works">Related Works</a></li>
         <li class="first-level "><a href="#publications">Publications</a></li>
+        <li class="first-level "><a href="#contact">Contact</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1>FusionPortable V2</h1>
 
-<h4>From Campus to Highway</h4>
+<h4>From Campus to Highway: A Unified Multi-Sensor Dataset for Generalized SLAM Across Diverse Platforms and Scalable Environments</h4>
 
 <!-- <p align="center">
     <img src="../../figure/dataset/fusionportable/cover.png" width="95%" />
@@ -229,29 +232,146 @@
 
 <!-- ## Introduction -->
 
+<h2 id="news">News<a class="headerlink" href="#news" title="Permanent link">&para;</a></h2>
+<ul>
+<li>(20240616) Some explanation of the dataset is provided.</li>
+<li>(20240508) Groundtruth poses of all vehicle-related sequences are postprocessed: eliminate poses characterized by high uncertainty.</li>
+<li>(20240422) Data can be downloaded from <a href="https://pan.baidu.com/s/1lZwK-TNrCyoyC9oWEs8jUg?pwd=byj8">Baidu Wang Pan</a> with the code <b>byj8</b>.</li>
+<li>(20240414) All sequences, ground-truth trajectories, and ground-truth maps have been publicly released. If you find issues of GT trajectories and maps, please contact us or report <a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues">here</a>.</li>
+<li>(20240413) A small simulated navigation environment is provied.</li>
+<li>(20240408) The development tool has been initially released.</li>
+<li>(20240407) Data can be downloaded from <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Google Drive</a>. </li>
+</ul>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <h3 id="sensors">Sensors<a class="headerlink" href="#sensors" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Handheld Sensor</strong>: 128-beam Ouster LiDAR (OS1, 120m range)</li>
-<li><strong>Handheld Sensor</strong>: Stereo FILR BFS-U3-31S4C cameras</li>
-<li><strong>Handheld Sensor</strong>: Stereo DAVIS346 cameras</li>
-<li><strong>Handheld Sensor</strong>: STIM300 IMU</li>
-<li><strong>Handheld Sensor</strong>: 3DM-GQ7-GNSS/INS</li>
+<li><strong>Handheld Sensor</strong>: <ul>
+<li>128-beam Ouster LiDAR (OS1, 120m range); </li>
+<li>Stereo FLIR BFS-U3-31S4C cameras;</li>
+<li>Stereo DAVIS346 cameras;</li>
+<li>STIM300 IMU;</li>
+<li>3DM-GQ7-GNSS/INS</li>
+</ul>
+</li>
 <li><strong>UGV Sensor</strong>: Omron E6B2-CWZ6C wheel encoder</li>
 <li><strong>Legged Robot Sensor</strong>: Built-in joint encoders, contact sensors, and IMU of the Unitree A1</li>
 </ul>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/sensor_summary.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/sensor_summary.png" width="100%" />
 </p>
 
-<h3 id="various-platforms">Various Platforms<a class="headerlink" href="#various-platforms" title="Permanent link">&para;</a></h3>
+<h4 id="definitions-of-coordinate-frame">Definitions of Coordinate Frame<a class="headerlink" href="#definitions-of-coordinate-frame" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Sensor</th>
+<th style="text-align: center;">Frame ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><b>3D LiDAR</b> (Ouster OS1-128 and its internal IMU)</td>
+<td style="text-align: center;">ouster00, ouster00_imu</td>
+</tr>
+<tr>
+<td style="text-align: center;">Left and Right <b>Frame Camera</b> (not vehicle-related sequeces)</td>
+<td style="text-align: center;">frame_cam00, frame_cam01</td>
+</tr>
+<tr>
+<td style="text-align: center;">Left and Right <b>Frame Camera</b> (vehicle-related sequeces)</td>
+<td style="text-align: center;">vehicle_frame_cam00, vehicle_frame_cam01</td>
+</tr>
+<tr>
+<td style="text-align: center;">Left and Right <b>Event Camera</b></td>
+<td style="text-align: center;">event_cam00, event_cam01</td>
+</tr>
+<tr>
+<td style="text-align: center;">Internal <b>IMU of the Left and Right Event Camera</td>
+<td style="text-align: center;">event_cam00_imu, event_cam01_imu</td>
+</tr>
+<tr>
+<td style="text-align: center;"><b>IMU</b> (STIM300)</td>
+<td style="text-align: center;">body_imu</td>
+</tr>
+<tr>
+<td style="text-align: center;"><b>INS</b> (3DM-GQ7-GNSS/INS)</td>
+<td style="text-align: center;">3dm_imu</td>
+</tr>
+<tr>
+<td style="text-align: center;">Left and Right <b>Wheel Encoder</b></td>
+<td style="text-align: center;">mini_hercules_wheel00, mini_hercules_wheel01</td>
+</tr>
+<tr>
+<td style="text-align: center;"><b>Legged Sensor</b> of the Unitree Quadruped Robot</td>
+<td style="text-align: center;">unitree_body_imu, unitree_hip, unitree_thign, unitree_calf, unitree_foot</td>
+</tr>
+</tbody>
+</table>
+<h4 id="explanation-of-ros-topic-and-message">Explanation of ROS Topic and Message<a class="headerlink" href="#explanation-of-ros-topic-and-message" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ROS Message Type</th>
+<th style="text-align: center;">Explanation</th>
+<th style="text-align: center;"><div style="width:150px">Link</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">sensor_msgs/PointCloud2</td>
+<td style="text-align: center;">A set of points is contained. <br> Each point is encoded with 3D coordinates (x, y, z), intensity, scanned timestamp (<b>nanosecond</b>), reflectivity, ring, ambient, and range</td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/PointCloud2.html">ROS PointCloud2 message</a> <br><a href="https://github.com/ouster-lidar/ouster-ros/blob/master/include/ouster_ros/os_point.h">Ouster Point Definition</a></br></td>
+</tr>
+<tr>
+<td style="text-align: center;">dvs_msgs/EventArray</td>
+<td style="text-align: center;">A set of events is contained. <br>Each event is encoded with pixel location (x, y), triggered timestamp (<a href="http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Time.html">std_msgs/Time</a>), and polarity</br></td>
+<td style="text-align: center;"><a href="https://github.com/uzh-rpg/rpg_dvs_ros/blob/master/dvs_msgs/msg/EventArray.msg">ROS EventArray</a> <br><a href="https://github.com/uzh-rpg/rpg_dvs_ros/blob/master/dvs_msgs/msg/Event.msg">ROS Event</a></b></td>
+</tr>
+<tr>
+<td style="text-align: center;">sensor_msgs/Imu</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Imu.html">ROS Imu</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">sensor_msgs/Image</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html">ROS Image</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">sensor_msgs/CompressedImage</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/CompressedImage.html">ROS CompressedImage</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">sensor_msgs/JointState</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/JointState.html">ROS JointState</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">sensor_msgs/Image</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html">ROS Image</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">sensor_msgs/Image</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html">ROS Image</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">nav_msgs/Odometry</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html">ROS Odometry</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="various-platforms-and-scenarios">Various Platforms and Scenarios<a class="headerlink" href="#various-platforms-and-scenarios" title="Permanent link">&para;</a></h3>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/robot_platform_scene.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/robot_platform_scene.png" width="80%" />
 </p>
 
 <h3 id="ground-truth-devices">Ground-Truth Devices<a class="headerlink" href="#ground-truth-devices" title="Permanent link">&para;</a></h3>
 <p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/groundtruth_device.png" width="90%" />
+  <img src="../../figure/dataset/fusionportable_v2/groundtruth_device.png" width="80%" />
 </p>
 
 <h3 id="third-view-of-data-collection">Third-View of Data Collection<a class="headerlink" href="#third-view-of-data-collection" title="Permanent link">&para;</a></h3>
@@ -265,154 +385,38 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Garden</td>
+<td style="text-align: center;"><div style="width:150px">Escalator</div></td>
+<td style="text-align: center;"><div style="width:100px">Handheld</div></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_handheld_escalator_00.gif" width="30%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Corridor</td>
 <td style="text-align: center;">Handheld</td>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/data_collection-garden.gif" width="40%" /></td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_handheld_corridor_02.gif" width="30%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Motion Capture Room</td>
-<td style="text-align: center;">Quadrupled Robot</td>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/data_collection-MCR_normal_00.gif" width="40%" /></td>
+<td style="text-align: center;">Underground Parking Lot</td>
+<td style="text-align: center;">Legged Robot</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_legged_underground_00.gif" width="30%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Campus</td>
+<td style="text-align: center;">UGV</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_ugv_campus_02.gif" width="30%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Outdoor Parking Lot</td>
+<td style="text-align: center;">UGV</td>
+<td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_ugv_parking_01.gif" width="30%" /></td>
 </tr>
 </tbody>
 </table>
-<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
-<h3 id="organization">Organization<a class="headerlink" href="#organization" title="Permanent link">&para;</a></h3>
-<pre>
-<p align="left">
-  <img src="../../figure/dataset/fusionportable_v2/data_organization.png" width="50%" />
-</p>
-</pre>
-
-<!-- <pre><code class="shell">
-FusionPortable/
-├── calibration_files/               // Intrinsics & extrinsics of sensors
-  └── 20230426_calib/
-    └── &ltsensor_name&gt.yaml           // e.g., ouster00.yaml, frame_cam00.yaml 
-├── groundtruth/
-  └── map/                           // Ground-truth maps
-    └── &ltdate_env&gt/
-      ├── scan/
-        └── &ltscan_id&gt.pcd            // Individual scan
-      ├── merged_scan.pcd            // Merged scan (resolution: 1cm)
-      └── transformation.yaml        // Transformation of each scan
-  └── traj/                          // Ground-truth trajectories 
-    └── &ltdate_env&gt.txt               // e.g., 20220215_canteen_night.txt
-└── sensor_data/
-  └── &ltplatform&gt/                    // Platforms, e.g., handheld
-    └── &ltdate_env&gt                   // e.g., 20220215_canteen_night
-      ├── &ltdate_env&gt.bag             
-      └── &ltdate_env&gt.bag.7z  
-</code></pre> -->
-<!-- ├── data/
-└── data_ref_kitti/ -->
-
-<div class="bs-callout bs-callout-default">
-  <h4>Note:</h4>
-  1. <code>&ltframe_id&gt.yaml</code> store intrinsics and extrinsics of a specific sensor.<br>
-  2. <code>&ltplatform_env&gt.bag</code> rosbag.<br>
-  3. <code>&ltplatform_env&gt.7z</code> compressed rosbag.<br>
-</div>
-
-<h3 id="trajectories-of-sequences">Trajectories of Sequences<a class="headerlink" href="#trajectories-of-sequences" title="Permanent link">&para;</a></h3>
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_ugv.png" width="90%" />
-</p>
-
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/sequence_traj_vehicle.png" width="90%" />
-</p>
-
-<h3 id="download-sequence">Download Sequence<a class="headerlink" href="#download-sequence" title="Permanent link">&para;</a></h3>
-<div class="bs-callout bs-callout-info">
-  <h4>Please click these below links to download:</h4>
-  1. <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Link to Google Drive</a>
-  <br>
-  2. <a href="">Link to Baidu Pan (unavailabel now) </a>
-  <br>
-  <p>Note: extract compressed ROSBag in the terminal: <code>7z l &ltplatform_env&gt.7z</code></p>
-</div>
-
-<h4 id="calibration-sequences">Calibration Sequences<a class="headerlink" href="#calibration-sequences" title="Permanent link">&para;</a></h4>
-<h4 id="hanheld-sequences">Hanheld Sequences<a class="headerlink" href="#hanheld-sequences" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Picture</th>
-<th style="text-align: center;">Sequence</th>
-<th style="text-align: center;"><div style="width:100px">Collection Time</div></th>
-<th style="text-align: center;"><div style="width:150px">Features</div></th>
-<th style="text-align: center;">Preview</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
-<td style="text-align: center;">handheld_grass00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
-<td style="text-align: center;">handheld_room00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
-<td style="text-align: center;">handheld_room01</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
-<td style="text-align: center;">handheld_escalator00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
-<td style="text-align: center;">handheld_escalator01</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
-</tr>
-<tr>
-<td style="text-align: center;"><img src="../../figure/dataset/fusionportable/canteen.png" alt="Canteen" width="50%"/></td>
-<td style="text-align: center;">handheld_underground00</td>
-<td style="text-align: center;">20230520-15:15</td>
-<td style="text-align: center;">Dynamiv Dynamic</td>
-<td style="text-align: center;"><a href="../../figure/dataset/fusionportable/dataset_preview/compressed/20220215_canteen_night_preview.gif">preview</a></td>
-</tr>
-</tbody>
-</table>
-<h4 id="legged-robot-sequences">Legged Robot Sequences<a class="headerlink" href="#legged-robot-sequences" title="Permanent link">&para;</a></h4>
-<h4 id="ugv-sequences">UGV Sequences<a class="headerlink" href="#ugv-sequences" title="Permanent link">&para;</a></h4>
-<h4 id="vehicle-sequences">Vehicle Sequences<a class="headerlink" href="#vehicle-sequences" title="Permanent link">&para;</a></h4>
-<h4 id="some-high-resolution-gt-maps">Some High-Resolution GT Maps<a class="headerlink" href="#some-high-resolution-gt-maps" title="Permanent link">&para;</a></h4>
-<!-- | Environment | Preview |
-| :---------- | :------ |
-| Garden      | <img src="../../figure/dataset/fusionportable/gt_map/gtmap_garden.gif" alt="GT Map_Garden" width="60%" />    |
-| Escalator   | <img src="../../figure/dataset/fusionportable/gt_map/gtmap_escalator.gif" alt="GT Map_Escalator" width="60%" /> |
-| Building    | <img src="../../figure/dataset/fusionportable/gt_map/gtmap_building.gif" alt="GT Map_Building" width="60%" />  | -->
-
-<!-- ### Download
-Download the dataset by clicking the button below, and log
-
-* Username: fusionportable
-* Password: iadchkust
-
-<a href="https://filebrowser.ram-lab.com"><button type="button" class="btn btn-success"><i class="fas fa-cloud-download-alt fa-2x"></i><span style="font-size:15px;"> Download</span></button></a> -->
-
+<h2 id="dataset-details-and-download">Dataset Details and Download<a class="headerlink" href="#dataset-details-and-download" title="Permanent link">&para;</a></h2>
+<p><span style="color:">Details and downloading of data can be checked by clicking the button below</span></p>
+<p><a href="../fusionportable_v2_data"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Dataset Details</button></a></p>
 <h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
-<h3 id="calibration">Calibration<a class="headerlink" href="#calibration" title="Permanent link">&para;</a></h3>
-<h3 id="localization-evaluation">Localization Evaluation<a class="headerlink" href="#localization-evaluation" title="Permanent link">&para;</a></h3>
-<h3 id="mapping-evaluation">Mapping Evaluation<a class="headerlink" href="#mapping-evaluation" title="Permanent link">&para;</a></h3>
-<h3 id="monocular-depth-estimation">Monocular Depth Estimation<a class="headerlink" href="#monocular-depth-estimation" title="Permanent link">&para;</a></h3>
+<p><span style="color:">Experiments can be checked by clicking the button below</span></p>
+<p><a href="../fusionportable_v2_exp"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Experiments</button></a></p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <p>The development tool can be used by clicking the button below</p>
 <p><a href="https://github.com/fusionportable/fusionportable_dataset_tools"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Development Tools</button></a></p>
@@ -434,22 +438,50 @@ Download the dataset by clicking the button below, and log
 | IMU + LiDAR + Monocular Vision | R3LIVE      | xxx  |
 |                                |             |      | -->
 
-<h2 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
-<p>If you have any issues with the theme, please report them on the repository:</p>
+<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<p>We have listed some knowns issues in our dataset:</p>
+<ol>
+<li>Some dynamic objects exist and not removed from the ground-truth maps. If you want the ``clear'' map for experiments, I recommend you to try the maps in <a href="https://fusionportable.github.io/dataset/fusionportable/">FusionPortable</a> first.</li>
+</ol>
+<p>If you have any other issues, please report them on the repository:</p>
 <p><a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Report Issues</button></a></p>
+<h2 id="related-works">Related Works<a class="headerlink" href="#related-works" title="Permanent link">&para;</a></h2>
+<p>FusionPortable-release works were used in the following papers.
+Please checkout these workds if you are interested.
+(Please contact us if you would like your work mentioned here).</p>
+<ul>
+<li><a href="https://github.com/umautobots/LONER">LiDAR Only Neural Representations for Real-Time SLAM</a>, <strong>IEEE RAL 2023</strong></li>
+<li>TBD</li>
+</ul>
 <h2 id="publications">Publications<a class="headerlink" href="#publications" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>FusionPortableV2: </strong><br/>
-<span style="color: gray">Hexiang Wei*, Jianhao Jiao*, Xiangcheng Hu, Jingwen Yu, Xupeng Xie, Jin Wu, Yilong Zhu, Yuxuan Liu, Lujia Wang, Ming Liu</span><br/>
+<li><strong>FusionPortableV2: A Unified Multi-Sensor Dataset for Generalized SLAM Across Diverse Platforms and Scalable Environments</strong><br/>
+<span style="color: gray">Hexiang Wei*, Jianhao Jiao*, Xiangcheng Hu, Jingwen Yu, Xupeng Xie, Jin Wu, Yilong Zhu, Yuxuan Liu, etc.</span><br/>
 <em>Under Review</em><br/>
-<a href="../../files/jiao2022fusionportable.pdf">[Arxiv]</a></li>
+<a href="https://arxiv.org/abs/2404.08563">[Arxiv]</a></li>
 </ol>
 <!-- [[bibtex]](bib/jiao2022fusionportable.bib) -->
 <!-- [[video]]() -->
 <!-- [[page]](https://ram-lab.com/file/site/multi-sensor-dataset)
 
+<!-- [preview](../../figure/dataset/fusionportable_v2/preview/20221202_hkustgz_campus_day_preview.gif) -->
 
-<!-- [preview](../../figure/dataset/fusionportable_v2/preview/20221202_hkustgz_campus_day_preview.gif) --></div>
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Dr. Jianhao Jiao (jiaojh1994 at gmail dot com): General problems of the dataset and Cooperation.</li>
+<li>Mr. Hexiang Wei (hweiak at connect dot ust dot hk): Problems related to hardware.</li>
+</ul>
+<!-- * Mr. Xiangcheng Hu (huxiangcheng123456 at gmail dot com): Problems related to groudtruth maps and mapping evaluation
+* Mr. Jingwen Yu (jyubt at connect dot ust dot hk): Problems related to privacy management
+* Mr. 
+* Dr. Yuxuan Liu (yliuhb at connect dot ust dot hk): Problems related to monocular depth estimation -->
+
+<!-- ## Contributors
+<!-- Mr. Xiangcheng Hu (huxiangcheng123456 at gmail dot com): Problems related to groudtruth maps and mapping evaluation
+Mr. Jingwen Yu (jyubt at connect dot ust dot hk): Problems related to privacy management
+Mr. 
+Dr. Yuxuan Liu (yliuhb at connect dot ust dot hk): Problems related to monocular depth estimation 
+MrHexiang Wei, Jianhao Jiao*, Xiangcheng Hu, Jingwen Yu, Xupeng Xie, Jin Wu, Yilong Zhu, Yuxuan Liu, --></div>
         
         
     </div>
