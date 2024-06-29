@@ -163,6 +163,12 @@
                         
                             
 <li >
+    <a href="../fusionportable_v2_calib/">FusionPortableV2-calib</a>
+</li>
+
+                        
+                            
+<li >
     <a href="../fusionportable_v2_exp/">FusionPortableV2-exp</a>
 </li>
 
@@ -212,6 +218,7 @@
             <li class="second-level"><a href="#third-view-of-data-collection">Third-View of Data Collection</a></li>
                 
         <li class="first-level "><a href="#dataset-details-and-download">Dataset Details and Download</a></li>
+        <li class="first-level "><a href="#sensor-calibration-tutorial">Sensor Calibration Tutorial</a></li>
         <li class="first-level "><a href="#experiments">Experiments</a></li>
         <li class="first-level "><a href="#tools">Tools</a></li>
         <li class="first-level "><a href="#known-issues">Known Issues</a></li>
@@ -234,6 +241,7 @@
 
 <h2 id="news">News<a class="headerlink" href="#news" title="Permanent link">&para;</a></h2>
 <ul>
+<li>(20240629) The tutoial of senosr calibration (intrinsics and extrinsics) is provided. Clik <a href="../fusionportable_v2_calib">here</a> to try.</li>
 <li>(20240616) Some explanation of the dataset is provided.</li>
 <li>(20240508) Groundtruth poses of all vehicle-related sequences are postprocessed: eliminate poses characterized by high uncertainty.</li>
 <li>(20240422) Data can be downloaded from <a href="https://pan.baidu.com/s/1lZwK-TNrCyoyC9oWEs8jUg?pwd=byj8">Baidu Wang Pan</a> with the code <b>byj8</b>.</li>
@@ -305,6 +313,10 @@
 <td style="text-align: center;"><b>Legged Sensor</b> of the Unitree Quadruped Robot</td>
 <td style="text-align: center;">unitree_body_imu, unitree_hip, unitree_thign, unitree_calf, unitree_foot</td>
 </tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
 </tbody>
 </table>
 <h4 id="explanation-of-ros-topic-and-message">Explanation of ROS Topic and Message<a class="headerlink" href="#explanation-of-ros-topic-and-message" title="Permanent link">&para;</a></h4>
@@ -343,14 +355,19 @@
 <td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/CompressedImage.html">ROS CompressedImage</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">sensor_msgs/JointState</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/JointState.html">ROS JointState</a></td>
+<td style="text-align: center;">unitree_legged_msgs/MotorState</td>
+<td style="text-align: center;">The customized message defined by Unitree which provided motor states. <br>The unitree A1 has <b>12</b> motors. Details can be check at <b>Section 1.4.1-1.4.2</b> of the <a href="../../files/Unitree_A1_Software_Guide_v2.0.pdf">Unitree A1 manual</a>.</br></td>
+<td style="text-align: center;"><a href="https://github.com/fusionportable/unitree_ros_to_real/blob/ram_A1/unitree_legged_msgs/msg/MotorState.msg">Unitree MotorState</a></td>
 </tr>
 <tr>
-<td style="text-align: center;">sensor_msgs/Image</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html">ROS Image</a></td>
+<td style="text-align: center;">unitree_legged_msgs/LowState</td>
+<td style="text-align: center;">The customized message defined by Unitree which provided contact states.</td>
+<td style="text-align: center;"><a href="https://github.com/fusionportable/unitree_ros_to_real/blob/ram_A1/unitree_legged_msgs/msg/LowState.msg">Unitree LowState</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">sensor_msgs/JointState</td>
+<td style="text-align: center;">The ROS message records key information of the motor states and contact states. We have this definition of JointState: </br>  </br> <b>For the ith motor (i&lt;=12, indicating FR0, FR1, FR2, FL0, FL1, FL2, RR0, RR1, RR2, RL0, RL1, RL2):</b> </br> JointState.position[i] = MotorState[i].q (motor current position [rad]) </br> JointState.velocity[i] = MotorState[i].dq (motor current speed [rad/s]) </br> JointState.effort[i] = MotorState[i].tauEst (current estimated output torque [N*m]) </br>  </br> <b>For the ith foot contact sensor (i&lt;=4, indicating: FR_foot, FL_foot, RR_foot, RL_foot):</b> </br> JointState.effort[i+12] = LowState[i].footForce  </br> </br> #FR0-FR2: Front-Right Hip, Front-Right Thigh, Front-Right Calf </br> #FL0-FL2: Front-Left Hip, Front-Left Thigh, Front-Left Calf </br> #RR0-RR2: Rear-Right Hip, Rear-Right Thigh, Rear-Right Calf </br> #RL0-RL2: Rear-Left Hip, Rear-Left Thigh, Rear-Left Calf </br>#FR_foot, FL_foot, RR_foot, RL_foot: Front-Right, Front-Left, Rear-Right, and Rear-Left Foot respectively</td>
+<td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/JointState.html">ROS JointState</a> <br><a href="https://github.com/fusionportable/unitree_ros_to_real/blob/436ba79302da335ebf3d2b37cdd70483a3b4cacc/unitree_legged_real/src/exe/walk_mode.cpp#L60">Code1</a> and <a href="https://github.com/fusionportable/unitree_ros_to_real/blob/436ba79302da335ebf3d2b37cdd70483a3b4cacc/unitree_legged_real/src/exe/walk_mode.cpp#L110">Code2</a> to define JointState.</br></td>
 </tr>
 <tr>
 <td style="text-align: center;">sensor_msgs/Image</td>
@@ -361,6 +378,11 @@
 <td style="text-align: center;">nav_msgs/Odometry</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html">ROS Odometry</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
@@ -409,13 +431,21 @@
 <td style="text-align: center;">UGV</td>
 <td style="text-align: center;"><img src="../../figure/dataset/fusionportable_v2/thirdparty/thirdparty_ugv_parking_01.gif" width="30%" /></td>
 </tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
 </tbody>
 </table>
 <h2 id="dataset-details-and-download">Dataset Details and Download<a class="headerlink" href="#dataset-details-and-download" title="Permanent link">&para;</a></h2>
-<p><span style="color:">Details and downloading of data can be checked by clicking the button below</span></p>
+<p><span style="color:">Click the below button for downloading the dataset</span></p>
 <p><a href="../fusionportable_v2_data"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Dataset Details</button></a></p>
+<h2 id="sensor-calibration-tutorial">Sensor Calibration Tutorial<a class="headerlink" href="#sensor-calibration-tutorial" title="Permanent link">&para;</a></h2>
+<p><span style="color:">Click the below button for the tutorials of sensor calibration</span></p>
+<p><a href="../fusionportable_v2_calib"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Sensor Calibration</button></a></p>
 <h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
-<p><span style="color:">Experiments can be checked by clicking the button below</span></p>
+<p><span style="color:">Click the below button for checking experimental results</span></p>
 <p><a href="../fusionportable_v2_exp"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Experiments</button></a></p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <p>The development tool can be used by clicking the button below</p>

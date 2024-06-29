@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>FusionPortableV2-exp - FusionPortable Research Dashboard</title>
+    <title>FusionPortableV2-calib - FusionPortable Research Dashboard</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -162,14 +162,14 @@
 
                         
                             
-<li >
-    <a href="../fusionportable_v2_calib/">FusionPortableV2-calib</a>
+<li class="active">
+    <a href="./">FusionPortableV2-calib</a>
 </li>
 
                         
                             
-<li class="active">
-    <a href="./">FusionPortableV2-exp</a>
+<li >
+    <a href="../fusionportable_v2_exp/">FusionPortableV2-exp</a>
 </li>
 
                         
@@ -186,12 +186,12 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../fusionportable_v2_calib/">
+                        <a rel="prev" href="../fusionportable_v2_data/">
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../fusionportable_v2_exp/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -205,65 +205,164 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#experiments">Experiments</a></li>
-            <li class="second-level"><a href="#localization-evaluation">Localization Evaluation</a></li>
+        <li class="first-level active"><a href="#overview-of-calibration-approaches">Overview of Calibration Approaches</a></li>
+            <li class="second-level"><a href="#references">References</a></li>
                 
-            <li class="second-level"><a href="#mapping-evaluation">Mapping Evaluation</a></li>
+        <li class="first-level "><a href="#guidelines-for-good-calibration">Guidelines for Good Calibration</a></li>
+            <li class="second-level"><a href="#intrinsic-calibration-of-wheel-encoder">Intrinsic Calibration of Wheel Encoder</a></li>
                 
-            <li class="second-level"><a href="#perception-test-monocular-3d-object-detection-segmentation-depth-estimation">Perception Test (Monocular 3d Object Detection, Segmentation, Depth Estimation)</a></li>
+            <li class="second-level"><a href="#extrinsic-calibration-of-imu-prism">Extrinsic Calibration of IMU-Prism</a></li>
                 
-            <li class="second-level"><a href="#navigation-demo-in-the-underground-parking-lot">Navigation Demo in the Underground Parking Lot</a></li>
+            <li class="second-level"><a href="#extrinsic-calibration-of-camera-lidar">Extrinsic Calibration of Camera-LiDAR</a></li>
                 
+        <li class="first-level "><a href="#calibration-verification">Calibration Verification</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1>FusionPortable V2-Experiments</h1>
+<h1>FusionPortable V2-Calibration Tutorial</h1>
 
-<h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
-<!-- ### Calibration
-Projected Point Cloud with Camera-LiDAR Calibration (<a href="https://github.com/HKUSTGZ-IADC/LCECalib">LCE-Calib</a>)
+<h2 id="overview-of-calibration-approaches">Overview of Calibration Approaches<a class="headerlink" href="#overview-of-calibration-approaches" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><div style="width:100px">Sensor</div></th>
+<th style="text-align: center;">Calibrated Parameter</th>
+<th style="text-align: center;">Approach</th>
+<th style="text-align: center;">Source</th>
+<th style="text-align: center;">Citation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Intrinsics</td>
+<td style="text-align: center;">IMU</td>
+<td style="text-align: center;">Noisy Density, Random Walk</td>
+<td style="text-align: center;">Allen variance analysis</td>
+<td style="text-align: center;"><a href="https://github.com/ori-drs/allan_variance_ros">Code</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Intrinsics</td>
+<td style="text-align: center;">Wheel Encoder</td>
+<td style="text-align: center;">Wheel Radiu, Axle Track</td>
+<td style="text-align: center;">Minimize alignment error between ground-truth trajectory and estimated trajectory</td>
+<td style="text-align: center;"><a href="">Code</a></td>
+<td style="text-align: center;">[1]</td>
+</tr>
+<tr>
+<td style="text-align: center;">Intrinsics</td>
+<td style="text-align: center;">Camera</td>
+<td style="text-align: center;">Focal Length, Center Point, Distortion</td>
+<td style="text-align: center;">Minimize reprojection error</td>
+<td style="text-align: center;"><a href="https://uk.mathworks.com/help/vision/ref/cameracalibrator-app.html">MATLAB Toolbox</a></td>
+<td style="text-align: center;">[2]</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><div style="width:150px">Sensor</div></th>
+<th style="text-align: center;">Calibrated Parameter</th>
+<th style="text-align: center;">Approach</th>
+<th style="text-align: center;">Source</th>
+<th style="text-align: center;">Citation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Extrinsics</td>
+<td style="text-align: center;">IMU-IMU</td>
+<td style="text-align: center;">Rotation, Translation</td>
+<td style="text-align: center;">Optimization</td>
+<td style="text-align: center;"><a href="https://github.com/ethz-asl/kalibr/wiki/Multi-IMU-and-IMU-intrinsic-calibration">Code</a></td>
+<td style="text-align: center;">[3]</td>
+</tr>
+<tr>
+<td style="text-align: center;">Extrinsics</td>
+<td style="text-align: center;">IMU-Camera</td>
+<td style="text-align: center;">Rotation, Translation, Constant Time Offset</td>
+<td style="text-align: center;">Optimization</td>
+<td style="text-align: center;"><a href="hhttps://github.com/ethz-asl/kalibr/wiki/camera-imu-calibration">Code</a></td>
+<td style="text-align: center;">[4]</td>
+</tr>
+<tr>
+<td style="text-align: center;">Extrinsics</td>
+<td style="text-align: center;">IMU-Prism</td>
+<td style="text-align: center;">Translation</td>
+<td style="text-align: center;">Hand-eye calibration</td>
+<td style="text-align: center;"><a href="https://github.com/ethz-asl/hand_eye_calibration">Code</a></td>
+<td style="text-align: center;">[5]</td>
+</tr>
+<tr>
+<td style="text-align: center;">Extrinsics</td>
+<td style="text-align: center;">IMU-Legged Sensors</td>
+<td style="text-align: center;">Rotation, Translation</td>
+<td style="text-align: center;">Obtained from the CAD model</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Extrinsics</td>
+<td style="text-align: center;">Camera-Camera</td>
+<td style="text-align: center;">Rotation, Translation</td>
+<td style="text-align: center;">Minimize reprojection errors</td>
+<td style="text-align: center;"><a href="https://uk.mathworks.com/help/vision/ref/stereocameracalibrator-app.html">MATLAB Toolbox</a></td>
+<td style="text-align: center;">[2]</td>
+</tr>
+<tr>
+<td style="text-align: center;">Extrinsics</td>
+<td style="text-align: center;">Camear-LiDAR</td>
+<td style="text-align: center;">Rotation, Translation</td>
+<td style="text-align: center;">Minimize point-to-line and point-to-plane errors</td>
+<td style="text-align: center;"><a href="https://github.com/HKUSTGZ-IADC/LCECalib">Code</a></td>
+<td style="text-align: center;">[6]</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<!-- <p align="center">
+  <img src="../../figure/dataset/fusionportable_v2/device_layout.png" width="70%" />
+</p> -->
+<p><b>Note:</b> After getting the extrinsics from the IMU-Left Frame Camera (T1) and Left Frame Camera-LiDAR (T2), we can infer extrinsics from IMU-LiDAR (T) by matrix multiplication: T = T1 x T2. We can obtain extrinsics among sensors indirectly by following this steps repeatedly. </p>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[1] Jeong J, Cho Y, Shin YS, Roh H and Kim A (2019) Complex urban dataset with multi-level sensors from highly diverse urban environments. The International Journal of Robotics Research 38(6): 642–657.</li>
+<li>[2] Zhang Z (2000) A flexible new technique for camera calibration. IEEE Transactions on pattern analysis and machine intelligence 22(11): 1330–1334.</li>
+<li>[3] Rehder J, Nikolic J, Schneider T, Hinzmann T and Siegwart R (2016) Extending kalibr: Calibrating the extrinsics of multiple imus and of individual axes. In: 2016 IEEE International Conference on Robotics and Automation (ICRA). IEEE, pp. 4304–4311.</li>
+<li>[4] Furgale P, Rehder J and Siegwart R (2013) Unified temporal and spatial calibration for multi-sensor systems. In: 2013 IEEE/RSJ International Conference on Intelligent Robots and Systems. IEEE, pp. 1280–1286.</li>
+<li>[5] Furrer F, Fehr M, Novkovic T, Sommer H, Gilitschenski I and Siegwart R (2018) Evaluation of combined time-offset
+estimation and hand-eye calibration on robotic datasets. In: Field and Service Robotics. Springer, pp. 145–159.</li>
+<li>[6] Jiao J, Chen F, Wei H, Wu J and Liu M (2023) Lce-calib: automatic lidar-frame/event camera extrinsic calibration with a globally optimal solution. IEEE/ASME Transactions on Mechatronics 28(5): 2988–2999.</li>
+</ul>
+<h2 id="guidelines-for-good-calibration">Guidelines for Good Calibration<a class="headerlink" href="#guidelines-for-good-calibration" title="Permanent link">&para;</a></h2>
+<p>All these calibration tools have been publicly released, accompanied by detailed tutorials for data preparation and calibration. Rather than repeating their guidance, we aim to explain some tips for data collection to achieve good calibration results. We believe that these explanations will be beneficial to beginners.</p>
+<h3 id="intrinsic-calibration-of-wheel-encoder">Intrinsic Calibration of Wheel Encoder<a class="headerlink" href="#intrinsic-calibration-of-wheel-encoder" title="Permanent link">&para;</a></h3>
+<h3 id="extrinsic-calibration-of-imu-prism">Extrinsic Calibration of IMU-Prism<a class="headerlink" href="#extrinsic-calibration-of-imu-prism" title="Permanent link">&para;</a></h3>
+<h3 id="extrinsic-calibration-of-camera-lidar">Extrinsic Calibration of Camera-LiDAR<a class="headerlink" href="#extrinsic-calibration-of-camera-lidar" title="Permanent link">&para;</a></h3>
+<h2 id="calibration-verification">Calibration Verification<a class="headerlink" href="#calibration-verification" title="Permanent link">&para;</a></h2>
+<p>Projected Point Cloud with Camera-LiDAR Calibration (<a href="https://github.com/HKUSTGZ-IADC/LCECalib">LCE-Calib</a>)</p>
 <p align="center">
   <img src="../../figure/dataset/fusionportable_v2/exp_calibration/vehicle_campus00_kitti360_vehicle_frame_cam00_proj.gif" width="40%" />
   <img src="../../figure/dataset/fusionportable_v2/exp_calibration/ugv_campus00_kitti360_frame_cam00_proj.gif" width="40%" />
-</p> -->
-
-<h3 id="localization-evaluation">Localization Evaluation<a class="headerlink" href="#localization-evaluation" title="Permanent link">&para;</a></h3>
-<p><b>Running FAST-LIO2</b>: handheld_room00, legged_grass00, ugv_campus00, vehicle_highway00</p>
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/exp_localization/handheld_room00_fastlio2_result_x5.gif" width="40%" />
-  <img src="../../figure/dataset/fusionportable_v2/exp_localization/legged_grass00_fastlio2_result_x5.gif" width="40%" />
-  <img src="../../figure/dataset/fusionportable_v2/exp_localization/ugv_campus00_fastlio2_result_x5.gif" width="40%" />
-  <img src="../../figure/dataset/fusionportable_v2/exp_localization/vehicle_highway00_fastlio2_result_x5.gif" width="40%" />
-</p>
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/exp_localization/trajectory_evaluation.png" width="85%" />
-</p>
-
-<p><b>Running COIN-LIO </b>: vehicle_tunnel00 (<a href="https://github.com/ethz-asl/COIN-LIO">COIN-LIO</a>)</p>
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/exp_localization/coinlio_vehicle_tunnel00.gif" width="60%" />
-</p>
-
-<h3 id="mapping-evaluation">Mapping Evaluation<a class="headerlink" href="#mapping-evaluation" title="Permanent link">&para;</a></h3>
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/exp_mapping/map_evaluation.png" width="85%" />
-</p>
-
-<h3 id="perception-test-monocular-3d-object-detection-segmentation-depth-estimation">Perception Test (Monocular 3d Object Detection, Segmentation, Depth Estimation)<a class="headerlink" href="#perception-test-monocular-3d-object-detection-segmentation-depth-estimation" title="Permanent link">&para;</a></h3>
-<p>Utilizing the <a href="https://github.com/Owen-Liuyuxuan/visionfactory">VisionFactory</a> for training and testing vision tasks.</p>
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/exp_depth_estimation/depth_estimation.png" width="85%" />
-</p>
-
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/exp_depth_estimation/vision_factory_vehicle_street.gif" width="84%" />
-</p>
-
-<h3 id="navigation-demo-in-the-underground-parking-lot">Navigation Demo in the Underground Parking Lot<a class="headerlink" href="#navigation-demo-in-the-underground-parking-lot" title="Permanent link">&para;</a></h3>
-<p>Importing the <a href="https://drive.google.com/drive/folders/1rXRyUXusJkWGaFxDTh3O6Lw07ivqai9w?usp=sharing">GT map</a> as the simulated environment (in Gazebo), we can employ the open-source <a href="https://www.cmu-exploration.com">CMU exploration package</a> to achieve the navigation experiment.</p>
-<p align="center">
-  <img src="../../figure/dataset/fusionportable_v2/exp_navigation/navigation_underground_tunnel.gif" width="85%" />
 </p></div>
         
         
