@@ -207,6 +207,8 @@
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#news">News</a></li>
         <li class="first-level "><a href="#overview">Overview</a></li>
+            <li class="second-level"><a href="#usage-steps">Usage Steps</a></li>
+                
             <li class="second-level"><a href="#sensors">Sensors</a></li>
                 
                 <li class="third-level"><a href="#definitions-of-coordinate-frame">Definitions of Coordinate Frame</a></li>
@@ -239,10 +241,11 @@
 
 <!-- ## Introduction -->
 
+<!-- * (20240616) Some explanation of the dataset is provided. -->
+
 <h2 id="news">News<a class="headerlink" href="#news" title="Permanent link">&para;</a></h2>
 <ul>
 <li>(20240629) The tutoial of senosr calibration (intrinsics and extrinsics) is provided. Clik <a href="../fusionportable_v2_calib">here</a> to try.</li>
-<li>(20240616) Some explanation of the dataset is provided.</li>
 <li>(20240508) Groundtruth poses of all vehicle-related sequences are postprocessed: eliminate poses characterized by high uncertainty.</li>
 <li>(20240422) Data can be downloaded from <a href="https://pan.baidu.com/s/1lZwK-TNrCyoyC9oWEs8jUg?pwd=byj8">Baidu Wang Pan</a> with the code <b>byj8</b>.</li>
 <li>(20240414) All sequences, ground-truth trajectories, and ground-truth maps have been publicly released. If you find issues of GT trajectories and maps, please contact us or report <a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues">here</a>.</li>
@@ -251,6 +254,12 @@
 <li>(20240407) Data can be downloaded from <a href="https://drive.google.com/drive/folders/1PYhnf3PlY5r0hbyzWDGTUTPxRMl6SYa-?usp=sharing">Google Drive</a>. </li>
 </ul>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="usage-steps">Usage Steps<a class="headerlink" href="#usage-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Read through the overview of the FusionPortableV2 dataset: <em>sensors, coordinate frames, and definitions of ROS topics and message</em>.</li>
+<li>Download data from this <a href="../fusionportable_v2_data">link</a>.</li>
+<li>Check examples of using the dataset from this <a href="../fusionportable_v2_exp">link</a>.</li>
+</ol>
 <h3 id="sensors">Sensors<a class="headerlink" href="#sensors" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Handheld Sensor</strong>: <ul>
@@ -331,7 +340,7 @@
 <tbody>
 <tr>
 <td style="text-align: center;">sensor_msgs/PointCloud2</td>
-<td style="text-align: center;">A set of points is contained. <br> Each point is encoded with 3D coordinates (x, y, z), intensity, scanned timestamp (<b>nanosecond</b>), reflectivity, ring, ambient, and range</td>
+<td style="text-align: center;">A set of points is contained. <br> <b>The timestamp of this message of the last point in a scan <a href="https://github.com/fusionportable/ouster_example/blob/0dab3b2ef2eb2fbecc980d8b7f6964938574bd88/ouster_ros/src/os_cloud_node.cpp#L77">[link]</a></b><br>Each point is encoded with 3D coordinates (x, y, z), intensity, scanned timestamp (<b>nanosecond</b>), reflectivity, ring, ambient, and range</td>
 <td style="text-align: center;"><a href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/PointCloud2.html">ROS PointCloud2 message</a> <br><a href="https://github.com/ouster-lidar/ouster-ros/blob/master/include/ouster_ros/os_point.h">Ouster Point Definition</a></br></td>
 </tr>
 <tr>
@@ -440,13 +449,13 @@
 </table>
 <h2 id="dataset-details-and-download">Dataset Details and Download<a class="headerlink" href="#dataset-details-and-download" title="Permanent link">&para;</a></h2>
 <p><span style="color:">Click the below button for downloading the dataset</span></p>
-<p><a href="../fusionportable_v2_data"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Dataset Details</button></a></p>
+<p><a href="../fusionportable_v2_data"><button class="btn btn-primary" type="submit"><i class="fa fa-gamepad fa-2x"></i> Dataset Details</button></a></p>
 <h2 id="sensor-calibration-tutorial">Sensor Calibration Tutorial<a class="headerlink" href="#sensor-calibration-tutorial" title="Permanent link">&para;</a></h2>
 <p><span style="color:">Click the below button for the tutorials of sensor calibration</span></p>
-<p><a href="../fusionportable_v2_calib"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Sensor Calibration</button></a></p>
+<p><a href="../fusionportable_v2_calib"><button class="btn btn-primary" type="submit"><i class="fa fa-ruler-horizontal fa-2x"></i>&nbsp;Sensor Calibration</button></a></p>
 <h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
 <p><span style="color:">Click the below button for checking experimental results</span></p>
-<p><a href="../fusionportable_v2_exp"><button class="btn btn-primary" type="submit"><i class="fab fa-bitbucket fa-2x"></i> Experiments</button></a></p>
+<p><a href="../fusionportable_v2_exp"><button class="btn btn-primary" type="submit"><i class="fa fa-hat-wizard fa-2x"></i> Experiments</button></a></p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <p>The development tool can be used by clicking the button below</p>
 <p><a href="https://github.com/fusionportable/fusionportable_dataset_tools"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Development Tools</button></a></p>
@@ -474,7 +483,7 @@
 <li>Some dynamic objects exist and not removed from the ground-truth maps. If you want the ``clear'' map for experiments, I recommend you to try the maps in <a href="https://fusionportable.github.io/dataset/fusionportable/">FusionPortable</a> first.</li>
 </ol>
 <p>If you have any other issues, please report them on the repository:</p>
-<p><a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues"><button class="btn btn-primary" type="submit"><i class="fab fa-github fa-2x"></i> Report Issues</button></a></p>
+<p><a href="https://github.com/fusionportable/fusionportable_dataset_tools/issues"><button class="btn btn-primary" type="submit"><i class="fa fa-puzzle-piece fa-2x"></i> Report Issues</button></a></p>
 <h2 id="related-works">Related Works<a class="headerlink" href="#related-works" title="Permanent link">&para;</a></h2>
 <p>FusionPortable-release works were used in the following papers.
 Please checkout these workds if you are interested.
